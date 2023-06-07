@@ -7,13 +7,19 @@ import {
   WrapperButtonsPresentation,
   ButtonWhatsApp,
   ButtonGithub,
-} from "./styles";
+} from './styles'
 
-import ImageProfile from "../../../../../assets/imageProfile.jpeg";
+import ImageProfile from '../../../../../assets/imageProfile.jpeg'
 
-import { BsWhatsapp, BsGithub } from "react-icons/bs";
+import { BsWhatsapp, BsGithub } from 'react-icons/bs'
+import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
+import { useTheme } from 'styled-components'
 
 export function Presentation() {
+  const theme = useTheme()
+
+  const isDeviceMobile = useMediaQuery(theme.device.laptopS)
+
   return (
     <ContentScreen>
       <WrapperTitle>
@@ -29,7 +35,7 @@ export function Presentation() {
         <WrapperButtonsPresentation>
           <ButtonWhatsApp>
             <BsWhatsapp />
-            Contact Me
+            {!isDeviceMobile && 'Contact Me'}
           </ButtonWhatsApp>
           <ButtonGithub target="_blank" href="https://github.com/jhonibr4">
             <BsGithub />
@@ -38,5 +44,5 @@ export function Presentation() {
       </WrapperTitle>
       <ContentImage src={ImageProfile} alt="" />
     </ContentScreen>
-  );
+  )
 }

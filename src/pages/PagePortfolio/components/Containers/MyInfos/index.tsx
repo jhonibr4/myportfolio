@@ -1,5 +1,5 @@
-import { ImgJF } from "../../../../../components/ImgJF";
-import { IInfos } from "../../../../../interface/Infos";
+import { ImgJF } from '../../../../../components/ImgJF'
+import { IInfos } from '../../../../../interface/Infos'
 import {
   ColumnInfo,
   ContentScreen,
@@ -8,18 +8,18 @@ import {
   TitleGreeting,
   TitleInfo,
   WrapperInfos,
-} from "./styles";
+} from './styles'
 
-import ArtJF1 from "../../../../../assets/ArtsJF/artJF1.svg";
+import ArtJF1 from '../../../../../assets/ArtsJF/artJF1.svg'
 
 export function MyInfos() {
   const infos = [
-    { name: "Name", value: "Jhonathan Felix Braz" },
-    { name: "Age", value: 22 },
-    { name: "Address", value: "Rua Pio XII" },
-    { name: "PhoneNumber", value: "+55 (11)98162-5429" },
-    { name: "Email", value: "jhonathan.braz@etec.sp.gov.br" },
-  ];
+    { name: 'Name', value: 'Jhonathan Felix Braz' },
+    { name: 'Age', value: 22 },
+    { name: 'Address', value: 'Rua Pio XII' },
+    { name: 'PhoneNumber', value: '+55 (11)98162-5429' },
+    { name: 'Email', value: 'jhonathan.braz@etec.sp.gov.br' },
+  ]
   return (
     <ContentScreen>
       <ImgJF image={ArtJF1} size={25} />
@@ -35,7 +35,7 @@ export function MyInfos() {
         <RowInfos>
           <ColumnInfo>
             {infos.map((info: IInfos, i) => (
-              <TitleInfo style={{ fontWeight: "bold" }} key={i}>
+              <TitleInfo style={{ fontWeight: 'bold' }} key={i}>
                 {info.name}
               </TitleInfo>
             ))}
@@ -48,5 +48,5 @@ export function MyInfos() {
         </RowInfos>
       </WrapperInfos>
     </ContentScreen>
-  );
+  )
 }

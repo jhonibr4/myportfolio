@@ -1,5 +1,5 @@
-import { RiArrowRightSLine } from "react-icons/ri";
-import { FiExternalLink } from "react-icons/fi";
+import { RiArrowRightSLine } from 'react-icons/ri'
+import { FiExternalLink } from 'react-icons/fi'
 import {
   ButtonView,
   ButtonViewCertificate,
@@ -19,12 +19,14 @@ import {
   WrapperHours,
   WrapperInfoCertificate,
   WrapperTechsCourses,
-} from "./styles";
-import { ICourse } from "../../../../interface/Course";
-import { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+} from './styles'
+import { ICourse } from '../../../../interface/Course'
+import { useState } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
 
-import { ItemTech } from "../../../../components/ItemTech";
+import { ItemTech } from '../../../../components/ItemTech'
+import { useMediaQuery } from '../../../../hooks/useQueryMedia'
+import { useTheme } from 'styled-components'
 
 export function CardCourse({
   name,
@@ -35,26 +37,22 @@ export function CardCourse({
   techs,
   link,
 }: ICourse) {
-  function handleCourse(
-    name: string,
-    duration: number,
-    imageCertificate: string
-  ) {
-    setOpen(true);
-    console.log(name, duration, imageCertificate);
+  function handleCourse() {
+    setOpen(true)
   }
-
-  const [open, setOpen] = useState(false);
+  const theme = useTheme()
+  const [open, setOpen] = useState(false)
+  const isDeviceMobileL = useMediaQuery(theme.device.mobileL)
 
   return (
     <CardSchool>
-      <ImageSchoolCurse src={imageSchool} />
+      {!isDeviceMobileL && <ImageSchoolCurse src={imageSchool} />}
       <TitleSchool>{name}</TitleSchool>
       <WrapperHours>
         <LabelHour>Duração:</LabelHour>
         <TextHour>{duration} horas no total</TextHour>
       </WrapperHours>
-      <ButtonView onClick={() => handleCourse(name, duration, imageSchool)}>
+      <ButtonView onClick={() => handleCourse()}>
         Ver Certificado
         <RiArrowRightSLine />
       </ButtonView>
@@ -71,7 +69,8 @@ export function CardCourse({
                   </DialogClose>
                   <DialogTitle>Certificado</DialogTitle>
                   <LabelCode>
-                    Código: <p>{codeCertificate}</p>
+                    {codeCertificate && `Código:`}
+                    <p>{codeCertificate}</p>
                   </LabelCode>
                   <DialogTitle>Principais Tecnologias</DialogTitle>
                   <WrapperTechsCourses>
@@ -90,5 +89,5 @@ export function CardCourse({
         </DialogTrigger>
       </DialogRoot>
     </CardSchool>
-  );
+  )
 }
