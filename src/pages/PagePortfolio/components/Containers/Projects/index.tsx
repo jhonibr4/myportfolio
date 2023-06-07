@@ -1,11 +1,22 @@
-import { ContentScreen, WrapperCardsProject } from "./styles";
+import { ContentScreen, WrapperCardsProject } from './styles'
 
-import { CardProject } from "../../CardProject";
-import { TitleContent } from "../../../../../components/TitleContent";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
-import { dataProjects } from "../../../../../databases/dataProjects";
+import { CardProject } from '../../CardProject'
+import { TitleContent } from '../../../../../components/TitleContent'
+
+import { dataProjects } from '../../../../../databases/dataProjects'
+import {
+  ButtonChangeProject,
+  WrapperChangeProject,
+} from '../../CardProject/styles'
+import { useTheme } from 'styled-components'
+import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
 
 export function Projects() {
+  const theme = useTheme()
+  const isDeviceMobile = useMediaQuery(theme.device.mobileL)
+
   return (
     <ContentScreen>
       <TitleContent title="Projetos" />
@@ -23,6 +34,16 @@ export function Projects() {
           ></CardProject>
         ))}
       </WrapperCardsProject>
+      {isDeviceMobile && (
+        <WrapperChangeProject>
+          <ButtonChangeProject>
+            <MdKeyboardArrowLeft />
+          </ButtonChangeProject>
+          <ButtonChangeProject>
+            <MdKeyboardArrowRight />
+          </ButtonChangeProject>
+        </WrapperChangeProject>
+      )}
     </ContentScreen>
-  );
+  )
 }

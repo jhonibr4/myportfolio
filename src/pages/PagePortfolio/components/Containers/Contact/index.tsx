@@ -1,4 +1,4 @@
-import { ImgJF } from "../../../../../components/ImgJF";
+import { ImgJF } from '../../../../../components/ImgJF'
 import {
   ButtonSend,
   ContentScreen,
@@ -9,14 +9,20 @@ import {
   TitleForm,
   WrapperForm,
   WrapperInputs,
-} from "./styles";
+} from './styles'
 
-import ArtJF from "../../../../../assets/ArtsJF/artJF3.svg";
+import ArtJF from '../../../../../assets/ArtsJF/artJF3.svg'
+import { useTheme } from 'styled-components'
+import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
 
 export function Contact() {
+  const theme = useTheme()
+  const isDeviceMobile = useMediaQuery(theme.device.tabletL)
+
   return (
     <ContentScreen>
       <WrapperForm>
+        {isDeviceMobile && <ImgJF image={ArtJF} size={35} />}
         <TitleForm>Vamos Conversar ?</TitleForm>
         <SubtitleForm>
           Caso tenha interesse de entrar em contato para mais informações, envie
@@ -32,7 +38,7 @@ export function Contact() {
           <ButtonSend>Enviar</ButtonSend>
         </WrapperInputs>
       </WrapperForm>
-      <ImgJF image={ArtJF} size={25} />
+      {!isDeviceMobile && <ImgJF image={ArtJF} size={35} />}
     </ContentScreen>
-  );
+  )
 }

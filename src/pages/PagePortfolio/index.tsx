@@ -12,9 +12,14 @@ import { Contact } from './components/Containers/Contact'
 export function PagePortfolio() {
   return (
     <ContainerMain>
+      <Menu />
       <Presentation />
       <MyInfos />
       <Graduation />
+      <Techs />
+      <Projects />
+      <Contact />
+      <Footer />
     </ContainerMain>
   )
 }

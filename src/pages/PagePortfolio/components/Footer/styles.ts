@@ -7,6 +7,9 @@ export const ContainerFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  @media ${({ theme }) => theme.device.mobileL} {
+    flex-direction: column-reverse;
+  }
 `
 export const WrapperLicense = styled.div`
   display: flex;
@@ -17,7 +20,11 @@ export const WrapperLicense = styled.div`
 export const ImageLogo = styled.img`
   width: 8rem;
 `
-export const TextLicense = styled.p``
+export const TextLicense = styled.p`
+  @media ${({ theme }) => theme.device.mobileL} {
+    text-align: center;
+  }
+`
 export const WrapperSocialMidia = styled.div`
   display: flex;
   gap: 1rem;
