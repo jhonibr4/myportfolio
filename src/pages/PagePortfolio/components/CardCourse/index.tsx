@@ -11,6 +11,7 @@ import {
   DialogRoot,
   DialogTitle,
   DialogTrigger,
+  ImageCertificate,
   ImageSchoolCurse,
   LabelCode,
   LabelHour,
@@ -61,7 +62,7 @@ export function CardCourse({
           <DialogPortal>
             <DialogOverlay>
               <DialogContent>
-                <img src={imageCertificate} alt="" />
+                <ImageCertificate src={imageCertificate} alt="" />
 
                 <WrapperInfoCertificate>
                   <DialogClose onClick={() => setOpen(false)}>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { IProject } from "../../../../interface/Projects";
+import { useState } from 'react'
+import { IProject } from '../../../../interface/Projects'
 import {
   ButtonViewProject,
   Card,
@@ -22,13 +22,15 @@ import {
   WrapperTechsProject,
   SecondTitle,
   ButtonViewProjectGithub,
-} from "./styles";
+  WrapperButton,
+  WrapperAllInfos,
+} from './styles'
 
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { BsGithub } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
-import { ItemTech } from "../../../../components/ItemTech";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { RiArrowRightSLine } from 'react-icons/ri'
+import { BsGithub } from 'react-icons/bs'
+import { AiOutlineClose } from 'react-icons/ai'
+import { ItemTech } from '../../../../components/ItemTech'
 
 export function CardProject({
   imageLogo,
@@ -38,17 +40,17 @@ export function CardProject({
   techs,
   link,
 }: IProject) {
-  const [open, setOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
+  const [open, setOpen] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
 
   function handleChangeImage(action: string) {
-    if (action === "next") {
+    if (action === 'next') {
       if (imagesProject.length - 1 > currentImage) {
-        setCurrentImage(currentImage + 1);
+        setCurrentImage(currentImage + 1)
       }
     } else {
       if (currentImage > 0) {
-        setCurrentImage(currentImage - 1);
+        setCurrentImage(currentImage - 1)
       }
     }
   }
@@ -73,25 +75,29 @@ export function CardProject({
                     <AiOutlineClose />
                   </DialogClose>
                   <WrapperImageProject>
-                    <ButtonPrev onClick={() => handleChangeImage("prev")}>
+                    <ButtonPrev onClick={() => handleChangeImage('prev')}>
                       <MdKeyboardArrowLeft />
                     </ButtonPrev>
                     <ImageProject src={imagesProject[currentImage]} />
-                    <ButtonNext onClick={() => handleChangeImage("next")}>
+                    <ButtonNext onClick={() => handleChangeImage('next')}>
                       <MdKeyboardArrowRight />
                     </ButtonNext>
                   </WrapperImageProject>
-                  <DialogTitle>{name}</DialogTitle>
-                  <SecondTitle>Principais Tecnologias</SecondTitle>
-                  <WrapperTechsProject>
-                    {techs.map((tech, i) => (
-                      <ItemTech id={i} key={i} tech={tech} />
-                    ))}
-                  </WrapperTechsProject>
-                  <ButtonViewProjectGithub href={link} target="_blank">
-                    Ver Projeto no Github
-                    <BsGithub />
-                  </ButtonViewProjectGithub>
+                  <WrapperAllInfos>
+                    <DialogTitle>{name}</DialogTitle>
+                    <SecondTitle>Principais Tecnologias</SecondTitle>
+                    <WrapperTechsProject>
+                      {techs.map((tech, i) => (
+                        <ItemTech id={i} key={i} tech={tech} />
+                      ))}
+                    </WrapperTechsProject>
+                  </WrapperAllInfos>
+                  <WrapperButton>
+                    <ButtonViewProjectGithub href={link} target="_blank">
+                      Ver Projeto no Github
+                      <BsGithub />
+                    </ButtonViewProjectGithub>
+                  </WrapperButton>
                 </DialogContent>
               </DialogOverlay>
             </DialogPortal>
@@ -99,5 +105,5 @@ export function CardProject({
         </DialogRoot>
       </WrapperInfoProject>
     </Card>
-  );
+  )
 }

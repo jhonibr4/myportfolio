@@ -107,7 +107,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
 export const DialogContent = styled(Dialog.Content)`
   position: relative;
   border-radius: 15px;
-
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
   min-width: 45rem;
@@ -116,15 +116,32 @@ export const DialogContent = styled(Dialog.Content)`
   background-color: ${({ theme }) => theme['black-800']};
   img {
     width: 45rem;
+    @media ${({ theme }) => theme.device.laptopL} {
+      width: 45rem;
+    }
+    @media ${({ theme }) => theme.device.mobileL} {
+      align-items: center;
+      width: 100%;
+    }
   }
-  :nth-child(1) {
+  @media ${({ theme }) => theme.device.laptopL} {
+    min-width: 45rem;
+    height: 45rem;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    min-width: 95%;
+    height: 82%;
   }
 `
 export const DialogTitle = styled(Dialog.Title)`
-  margin-block: 1rem;
+  margin-block: 0rem;
   align-self: center;
   font-size: 2.5rem;
   color: ${({ theme }) => theme['purple-600']};
+
+  @media ${({ theme }) => theme.device.mobileL} {
+    margin-block: 1rem;
+  }
 `
 export const SecondTitle = styled(DialogTitle)`
   margin-block: 0rem 1rem;
@@ -159,8 +176,16 @@ export const WrapperImageProject = styled.div`
   border-top-left-radius: 15px;
   width: 100%;
   height: 60%;
-  background-color: #e012;
+
   align-items: center;
+  @media ${({ theme }) => theme.device.laptopL} {
+    width: 100%;
+    height: 60%;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    width: 100%;
+    height: 40%;
+  }
 `
 export const ImageProject = styled.img`
   border-top-right-radius: 15px;
@@ -207,6 +232,13 @@ export const ButtonNext = styled.button`
     background-color: #0008;
   }
 `
+export const WrapperAllInfos = styled.div`
+  margin-bottom: 2rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 export const WrapperTechsProject = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -215,7 +247,10 @@ export const WrapperTechsProject = styled.div`
   gap: 0.8rem;
   width: 100%;
 `
-
+export const WrapperButton = styled.div`
+  display: flex;
+  justify-content: center;
+`
 export const ButtonViewProjectGithub = styled.a`
   display: flex;
   align-items: center;
@@ -239,5 +274,9 @@ export const ButtonViewProjectGithub = styled.a`
   svg {
     margin-left: 10px;
     font-size: 1.5rem;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    margin-top: 1rem;
+    width: 85%;
   }
 `

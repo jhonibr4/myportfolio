@@ -131,9 +131,48 @@ export const DialogContent = styled(Dialog.Content)`
   height: 35rem;
 
   background-color: ${({ theme }) => theme['black-800']};
-  img {
-    width: 45rem;
-    margin-right: 10px;
+
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 90%;
+    height: 30rem;
+  }
+  @media ${({ theme }) => theme.device.laptopS} {
+    min-width: 50rem;
+    width: 90%;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    padding: 0px 0.5rem;
+    min-width: 30rem;
+
+    position: relative;
+    flex-direction: column;
+    width: 30vw;
+    height: 100%;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    align-items: center;
+    padding: 0px 0.5rem;
+    min-width: 100%;
+    position: relative;
+    flex-direction: column;
+    width: 10rem;
+    height: 100%;
+  }
+`
+
+export const ImageCertificate = styled.img`
+  @media ${({ theme }) => theme.device.laptopS} {
+    width: 80%;
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 60%;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    width: 96%;
   }
 `
 export const DialogTitle = styled(Dialog.Title)`
@@ -141,6 +180,12 @@ export const DialogTitle = styled(Dialog.Title)`
   align-self: center;
 
   color: ${({ theme }) => theme['purple-400']};
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: 1rem;
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    margin-block: 0.8rem;
+  }
 `
 export const DialogClose = styled(Dialog.Close)`
   display: flex;
@@ -159,14 +204,43 @@ export const DialogClose = styled(Dialog.Close)`
   :hover {
     background-color: ${({ theme }) => theme['purple-600']};
   }
+
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    top: 0.5rem;
+    right: 0;
+    position: absolute;
+    background-color: ${({ theme }) => theme['purple-600']};
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    background-color: ${({ theme }) => theme['purple-600']};
+  }
 `
 export const WrapperInfoCertificate = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 40%;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 100%;
+
+    position: static;
+    font-size: 0.8rem;
+  }
 `
 export const LabelCode = styled.span`
+  text-align: center;
   align-self: center;
   margin-block: 20px;
   display: flex;
@@ -177,6 +251,12 @@ export const LabelCode = styled.span`
     color: ${({ theme }) => theme.white};
     font-weight: 400;
   }
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: 0.8rem;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    margin-block: 0.3rem;
+  }
 `
 export const WrapperTechsCourses = styled.div`
   display: flex;
@@ -185,6 +265,17 @@ export const WrapperTechsCourses = styled.div`
   gap: 0.8rem;
   align-items: center;
   width: 30rem;
+
+  @media ${({ theme }) => theme.device.laptopM} {
+    margin-left: 0.5rem;
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    align-self: center;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 100%;
+  }
 `
 export const ButtonViewCertificate = styled.a`
   display: flex;
@@ -201,5 +292,14 @@ export const ButtonViewCertificate = styled.a`
   cursor: pointer;
   svg {
     margin-left: 10px;
+  }
+
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: 1rem;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    position: static;
+    margin-block: 2rem;
+    bottom: 2rem;
   }
 `
