@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContentScreen = styled.div`
+export const ContentScreen = styled.section`
   height: 100vh;
   display: flex;
   align-items: center;
@@ -83,8 +83,8 @@ export const WrapperButtonsPresentation = styled.div`
     justify-content: center;
   }
 `
-export const ButtonWhatsApp = styled.button`
-  padding-inline: 20px;
+export const ButtonWhatsApp = styled.a`
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -92,7 +92,8 @@ export const ButtonWhatsApp = styled.button`
   border-radius: 10px;
   font-size: ${({ theme }) => theme.fontSize.lg};
   width: 12rem;
-  height: 3rem;
+  height: 4rem;
+  color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme['purple-600']};
   transition: 0.5s;
   cursor: pointer;
@@ -100,7 +101,8 @@ export const ButtonWhatsApp = styled.button`
     background-color: ${({ theme }) => theme['purple-400']};
   }
   svg {
-    font-size: 1.5rem;
+    color: ${({ theme }) => theme.white};
+    font-size: 2rem;
     @media ${({ theme }) => theme.device.laptopS} {
     }
   }
@@ -117,8 +119,8 @@ export const ButtonGithub = styled.a`
   margin-top: 20px;
   border-radius: 50%;
   font-size: ${({ theme }) => theme.fontSize.lg};
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border: 2px solid ${({ theme }) => theme['purple-600']};
   background: transparent;
   transition: 0.5s;
@@ -129,7 +131,7 @@ export const ButtonGithub = styled.a`
   }
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   @media ${({ theme }) => theme.device.laptopS} {
     border-radius: 50px;

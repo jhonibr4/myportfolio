@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IProject } from '../../../../interface/Projects'
 import {
   ButtonViewProject,
@@ -41,22 +41,39 @@ export function CardProject({
   link,
 }: IProject) {
   const [open, setOpen] = useState(false)
-  const [currentImage, setCurrentImage] = useState(0)
+  const [imageSelected, setImageSelected] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  function handleChangeImage(action: string) {
-    if (action === 'next') {
-      if (imagesProject.length - 1 > currentImage) {
-        setCurrentImage(currentImage + 1)
+  useEffect(() => {
+    if (!isLoaded) {
+      const element = document.getElementById(`${name}${imageSelected}`)
+      element?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+      console.log(element)
+    }
+  }, [isLoaded, imageSelected])
+
+  function handleScrollImages(button: string) {
+    setIsLoaded(false)
+    if (button === 'prev') {
+      if (imageSelected > 0) {
+        setImageSelected(imageSelected - 1)
+      } else if (imageSelected === 0) {
+        setImageSelected(imagesProject.length - 1)
       }
     } else {
-      if (currentImage > 0) {
-        setCurrentImage(currentImage - 1)
+      if (imageSelected < imagesProject.length - 1) {
+        setImageSelected(imageSelected + 1)
+      } else if (imageSelected === imagesProject.length - 1) {
+        setImageSelected(0)
       }
     }
   }
 
   return (
-    <Card>
+    <Card id={name}>
       <WrapperImage>
         <ImageLogoProject src={imageLogo} />
       </WrapperImage>
@@ -75,11 +92,13 @@ export function CardProject({
                     <AiOutlineClose />
                   </DialogClose>
                   <WrapperImageProject>
-                    <ButtonPrev onClick={() => handleChangeImage('prev')}>
+                    <ButtonPrev onClick={() => handleScrollImages('prev')}>
                       <MdKeyboardArrowLeft />
                     </ButtonPrev>
-                    <ImageProject src={imagesProject[currentImage]} />
-                    <ButtonNext onClick={() => handleChangeImage('next')}>
+                    {imagesProject.map((image, i) => (
+                      <ImageProject id={`${name}${i}`} key={i} src={image} />
+                    ))}
+                    <ButtonNext onClick={() => handleScrollImages('next')}>
                       <MdKeyboardArrowRight />
                     </ButtonNext>
                   </WrapperImageProject>

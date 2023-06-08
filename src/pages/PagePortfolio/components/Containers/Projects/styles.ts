@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContentScreen = styled.div`
+export const ContentScreen = styled.section`
   height: 100%;
   padding-bottom: 3rem;
   display: flex;
@@ -20,7 +20,7 @@ export const WrapperCardsProject = styled.div`
   margin-top: 2rem;
   gap: 2rem;
   @media ${({ theme }) => theme.device.mobileL} {
-    overflow-x: auto;
+    overflow-x: hidden;
     flex-wrap: nowrap;
   }
 `

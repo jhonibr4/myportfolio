@@ -1,11 +1,11 @@
-import { ItemHardSkill } from "../../ItemHardSkill";
-import { RowTechs, TitleTechs } from "../../ItemHardSkill/styles";
+import { ItemHardSkill } from '../../ItemHardSkill'
+import { RowTechs, TitleTechs } from '../../ItemHardSkill/styles'
 import {
   ContentHardSkills,
   ContentScreen,
   TitleHardSkills,
   WrapperHardSkills,
-} from "./styles";
+} from './styles'
 
 import {
   DiHtml5,
@@ -14,15 +14,15 @@ import {
   DiJava,
   DiPhp,
   DiPython,
-} from "react-icons/di";
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript, SiStyledcomponents } from "react-icons/si";
+} from 'react-icons/di'
+import { IoLogoJavascript } from 'react-icons/io5'
+import { SiTypescript, SiStyledcomponents } from 'react-icons/si'
 
 export function Techs() {
-  const levelHTML = [true, true, true, false, false];
+  const levelHTML = [true, true, true, false, false]
 
   return (
-    <ContentScreen>
+    <ContentScreen id="techs">
       <WrapperHardSkills>
         <TitleHardSkills>
           Hard <span>Skills</span>
@@ -46,5 +46,5 @@ export function Techs() {
         </RowTechs>
       </WrapperHardSkills>
     </ContentScreen>
-  );
+  )
 }

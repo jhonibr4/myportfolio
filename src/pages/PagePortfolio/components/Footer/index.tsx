@@ -5,12 +5,12 @@ import {
   TextLicense,
   WrapperLicense,
   WrapperSocialMidia,
-} from "./styles";
+} from './styles'
 
-import { BsInstagram, BsGithub } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+import { BsInstagram, BsGithub } from 'react-icons/bs'
+import { FaLinkedin } from 'react-icons/fa'
 
-import LogoPurple from "../../../../assets/LogoPurple.svg";
+import LogoPurple from '../../../../assets/LogoPurple.svg'
 
 export function Footer() {
   return (
@@ -22,16 +22,22 @@ export function Footer() {
         </TextLicense>
       </WrapperLicense>
       <WrapperSocialMidia>
-        <ButtonSocialMidia>
+        <ButtonSocialMidia href="https://github.com/jhonibr4" target="_blank">
           <BsGithub />
         </ButtonSocialMidia>
-        <ButtonSocialMidia>
+        <ButtonSocialMidia
+          href="https://www.linkedin.com/in/jhonathanfb/"
+          target="_blank"
+        >
           <FaLinkedin />
         </ButtonSocialMidia>
-        <ButtonSocialMidia>
+        <ButtonSocialMidia
+          href="https://www.instagram.com/jhon_felixx30/"
+          target="_blank"
+        >
           <BsInstagram />
         </ButtonSocialMidia>
       </WrapperSocialMidia>
     </ContainerFooter>
-  );
+  )
 }

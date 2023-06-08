@@ -21,7 +21,7 @@ export function MyInfos() {
     { name: 'Email', value: 'jhonathan.braz@etec.sp.gov.br' },
   ]
   return (
-    <ContentScreen>
+    <ContentScreen id="infos">
       <ImgJF image={ArtJF1} size={25} />
       <WrapperInfos>
         <TitleGreeting>Hi, I am Jhonathan Felix Braz</TitleGreeting>

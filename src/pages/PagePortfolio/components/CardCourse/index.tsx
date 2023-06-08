@@ -37,6 +37,7 @@ export function CardCourse({
   codeCertificate,
   techs,
   link,
+  nameSchool,
 }: ICourse) {
   function handleCourse() {
     setOpen(true)
@@ -46,7 +47,7 @@ export function CardCourse({
   const isDeviceMobileL = useMediaQuery(theme.device.mobileL)
 
   return (
-    <CardSchool>
+    <CardSchool id={nameSchool}>
       {!isDeviceMobileL && <ImageSchoolCurse src={imageSchool} />}
       <TitleSchool>{name}</TitleSchool>
       <WrapperHours>

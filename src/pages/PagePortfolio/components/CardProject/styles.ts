@@ -75,6 +75,7 @@ export const ButtonViewProject = styled.button`
 export const WrapperChangeProject = styled.div`
   margin-top: 1rem;
   gap: 2rem;
+
   display: flex;
   justify-content: center;
   width: 50%;
@@ -109,28 +110,32 @@ export const DialogContent = styled(Dialog.Content)`
   border-radius: 15px;
   justify-content: space-between;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  min-width: 45rem;
+  min-width: 40rem;
   height: 45rem;
 
   background-color: ${({ theme }) => theme['black-800']};
-  img {
-    width: 45rem;
-    @media ${({ theme }) => theme.device.laptopL} {
-      width: 45rem;
-    }
-    @media ${({ theme }) => theme.device.mobileL} {
-      align-items: center;
-      width: 100%;
-    }
-  }
+
   @media ${({ theme }) => theme.device.laptopL} {
     min-width: 45rem;
-    height: 45rem;
+    height: 50rem;
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    min-width: 35rem;
+    height: 40rem;
+  }
+  @media ${({ theme }) => theme.device.laptopS} {
+    min-width: 35rem;
+    height: 40rem;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    min-width: 35rem;
+    height: 95%;
   }
   @media ${({ theme }) => theme.device.mobileL} {
-    min-width: 95%;
-    height: 82%;
+    min-width: 100%;
+    height: 95%;
   }
 `
 export const DialogTitle = styled(Dialog.Title)`
@@ -174,17 +179,39 @@ export const WrapperImageProject = styled.div`
   display: flex;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  width: 100%;
-  height: 60%;
+  width: 40rem;
 
+  height: 60%;
   align-items: center;
+  overflow-x: hidden;
+
   @media ${({ theme }) => theme.device.laptopL} {
-    width: 100%;
+    width: 45rem;
+    height: 55%;
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 35rem;
+    height: 55%;
+  }
+  @media ${({ theme }) => theme.device.laptopS} {
+    width: 35rem;
+    height: 55%;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 35rem;
     height: 60%;
   }
   @media ${({ theme }) => theme.device.mobileL} {
     width: 100%;
     height: 40%;
+  }
+  @media ${({ theme }) => theme.device.mobileM} {
+    width: 100%;
+    height: 35%;
+  }
+  @media ${({ theme }) => theme.device.mobileS} {
+    width: 100%;
+    height: 30%;
   }
 `
 export const ImageProject = styled.img`
@@ -233,8 +260,7 @@ export const ButtonNext = styled.button`
   }
 `
 export const WrapperAllInfos = styled.div`
-  margin-bottom: 2rem;
-  padding-bottom: 3rem;
+  margin-bottom: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -252,12 +278,13 @@ export const WrapperButton = styled.div`
   justify-content: center;
 `
 export const ButtonViewProjectGithub = styled.a`
+  padding-inline: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   font-weight: bold;
-  width: 40%;
+  width: 100%;
   height: 40px;
   border-radius: 25px;
   background-color: ${({ theme }) => theme.white};

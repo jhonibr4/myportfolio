@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContentScreen = styled.div`
+export const ContentScreen = styled.section`
   padding-block: 2rem;
   height: 100vh;
   display: flex;

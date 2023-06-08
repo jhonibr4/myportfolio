@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   ContainerMenu,
   ButtonMenu,
@@ -16,22 +16,32 @@ import { useMediaQuery } from '../../../../hooks/useQueryMedia'
 import { useTheme } from 'styled-components'
 
 export function Menu() {
-  const [buttonSelected, setButtonSelected] = useState<string>('buttonHome')
+  const [buttonSelected, setButtonSelected] = useState<string>('presentation')
+  const [isScrolling, setIsScrolling] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  window.addEventListener('scroll', function () {
-    if (this.scrollY > 100 && this.scrollY < 300) {
-      setButtonSelected('buttonHome')
-    } else if (this.scrollY > 720 && this.scrollY < 920) {
-      setButtonSelected('buttonProfile')
-    } else if (this.scrollY > 1600 && this.scrollY < 1800) {
-      setButtonSelected('buttonGraduation')
-    } else if (this.scrollY > 2300 && this.scrollY < 2400) {
-      setButtonSelected('buttonTechs')
-    } else if (this.scrollY > 3120 && this.scrollY < 3720) {
-      setButtonSelected('buttonProjects')
-    } else if (this.scrollY > 4380 && this.scrollY < 4714) {
-      setButtonSelected('buttonContact')
+  useEffect(() => {
+    if (isLoaded) {
+      const element = document.getElementById(buttonSelected)
+      element?.scrollIntoView({
+        behavior: 'smooth',
+      })
+      console.log(element)
     }
+  }, [isLoaded, buttonSelected])
+
+  function handleScrollScreen(screen: string) {
+    setIsLoaded(true)
+    setIsScrolling(false)
+
+    setButtonSelected(screen)
+    setTimeout(() => {
+      setIsScrolling(true)
+    }, 1000)
+  }
+
+  window.addEventListener('focus', function (e) {
+    console.log(e)
   })
 
   const theme = useTheme()
@@ -44,10 +54,10 @@ export function Menu() {
         <ImageLogo src={Logo} />
         <WrapperButton>
           <ButtonMenu
-            onClick={() => setButtonSelected('buttonHome')}
+            onClick={() => handleScrollScreen('presentation')}
             className="button"
             style={
-              buttonSelected === 'buttonHome'
+              buttonSelected === 'presentation'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }
@@ -57,9 +67,9 @@ export function Menu() {
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => setButtonSelected('buttonProfile')}
+            onClick={() => handleScrollScreen('infos')}
             style={
-              buttonSelected === 'buttonProfile'
+              buttonSelected === 'infos'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }
@@ -69,9 +79,9 @@ export function Menu() {
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => setButtonSelected('buttonGraduation')}
+            onClick={() => handleScrollScreen('graduation')}
             style={
-              buttonSelected === 'buttonGraduation'
+              buttonSelected === 'graduation'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }
@@ -81,9 +91,9 @@ export function Menu() {
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => setButtonSelected('buttonTechs')}
+            onClick={() => handleScrollScreen('techs')}
             style={
-              buttonSelected === 'buttonTechs'
+              buttonSelected === 'techs'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }
@@ -93,9 +103,9 @@ export function Menu() {
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => setButtonSelected('buttonProjects')}
+            onClick={() => handleScrollScreen('projects')}
             style={
-              buttonSelected === 'buttonProjects'
+              buttonSelected === 'projects'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }
@@ -105,9 +115,9 @@ export function Menu() {
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => setButtonSelected('buttonContact')}
+            onClick={() => handleScrollScreen('contact')}
             style={
-              buttonSelected === 'buttonContact'
+              buttonSelected === 'contact'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
                 : { backgroundColor: 'transparent', color: 'white' }
             }

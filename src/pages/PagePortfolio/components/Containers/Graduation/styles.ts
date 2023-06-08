@@ -1,17 +1,20 @@
 import styled from 'styled-components'
 
-export const ContentScreen = styled.div`
+export const ContentScreen = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme['black-800']};
+  @media ${({ theme }) => theme.device.tabletL} {
+    padding-bottom: 2rem;
+  }
 `
 export const WrapperGraduation = styled.div`
   margin-top: 4rem;
   display: flex;
-  gap: 5rem;
+  gap: 10rem;
   align-items: center;
 
   width: 80%;
@@ -32,30 +35,25 @@ export const WrapperGraduation = styled.div`
   }
 `
 export const WrapperButtonsCard = styled.div`
+  margin-top: 1rem;
   width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  :nth-child(3) {
-    margin-top: 20rem;
-    background-color: #e02;
-  }
-  @media ${({ theme }) => theme.device.tabletL} {
-  }
 `
 export const WrapperCards = styled.div`
   display: flex;
 
   flex-direction: column;
 
-  width: 80%;
+  width: 60%;
 
   @media ${({ theme }) => theme.device.laptopS} {
     width: 90%;
   }
   @media ${({ theme }) => theme.device.tabletL} {
+    gap: 1rem;
     width: 70%;
     flex-direction: row;
     overflow-x: hidden;
@@ -64,33 +62,26 @@ export const WrapperCards = styled.div`
   @media ${({ theme }) => theme.device.tabletM} {
   }
   @media ${({ theme }) => theme.device.mobileL} {
-    width: 70%;
+    width: 100%;
     flex-direction: row;
     overflow-x: hidden;
   }
 `
 export const ButtonSelectCourse = styled.button`
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4rem;
+  height: 4rem;
   background-color: ${({ theme }) => theme['purple-600']};
   svg {
     font-size: 1.5rem;
   }
   @media ${({ theme }) => theme.device.mobileL} {
-    width: 3rem;
-    height: 3rem;
-  }
-  @media ${({ theme }) => theme.device.mobileM} {
-    width: 3rem;
-    height: 2.8rem;
-  }
-  @media ${({ theme }) => theme.device.mobileS} {
-    width: 3rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
   }
 `
 export const ButtonPrev = styled(ButtonSelectCourse)`

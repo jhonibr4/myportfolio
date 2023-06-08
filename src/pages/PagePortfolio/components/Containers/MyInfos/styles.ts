@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import LogoBackground from '../../../../../assets/logo.svg'
 
-export const ContentScreen = styled.div`
+export const ContentScreen = styled.section`
   height: 100vh;
   background-color: ${({ theme }) => theme['purple-600']};
   display: flex;

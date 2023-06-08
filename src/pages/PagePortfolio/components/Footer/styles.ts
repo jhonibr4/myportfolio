@@ -8,6 +8,7 @@ export const ContainerFooter = styled.footer`
   align-items: center;
   justify-content: space-around;
   @media ${({ theme }) => theme.device.mobileL} {
+    padding-block: 2rem;
     flex-direction: column-reverse;
   }
 `
@@ -29,7 +30,8 @@ export const WrapperSocialMidia = styled.div`
   display: flex;
   gap: 1rem;
 `
-export const ButtonSocialMidia = styled.button`
+export const ButtonSocialMidia = styled.a`
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +45,7 @@ export const ButtonSocialMidia = styled.button`
     background-color: ${({ theme }) => theme['purple-600']};
   }
   svg {
+    color: ${({ theme }) => theme.white};
     font-size: 2rem;
   }
 `

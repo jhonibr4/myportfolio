@@ -12,13 +12,45 @@ import {
 } from '../../CardProject/styles'
 import { useTheme } from 'styled-components'
 import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
+import { useState, useEffect } from 'react'
 
 export function Projects() {
   const theme = useTheme()
   const isDeviceMobile = useMediaQuery(theme.device.mobileL)
 
+  const [cardSelected, setCardSelected] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    if (isLoaded) {
+      const element = document.getElementById(dataProjects[cardSelected].name)
+      element?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+      console.log(element)
+    }
+  }, [isLoaded, cardSelected])
+
+  function handleScrollProjects(button: string) {
+    setIsLoaded(true)
+    if (button === 'prev') {
+      if (cardSelected > 0) {
+        setCardSelected(cardSelected - 1)
+      } else if (cardSelected === 0) {
+        setCardSelected(dataProjects.length - 1)
+      }
+    } else {
+      if (cardSelected < dataProjects.length - 1) {
+        setCardSelected(cardSelected + 1)
+      } else if (cardSelected === dataProjects.length - 1) {
+        setCardSelected(0)
+      }
+    }
+  }
+
   return (
-    <ContentScreen>
+    <ContentScreen id="projects">
       <TitleContent title="Projetos" />
       <WrapperCardsProject>
         {dataProjects.map((project) => (
@@ -36,10 +68,10 @@ export function Projects() {
       </WrapperCardsProject>
       {isDeviceMobile && (
         <WrapperChangeProject>
-          <ButtonChangeProject>
+          <ButtonChangeProject onClick={() => handleScrollProjects('prev')}>
             <MdKeyboardArrowLeft />
           </ButtonChangeProject>
-          <ButtonChangeProject>
+          <ButtonChangeProject onClick={() => handleScrollProjects('next')}>
             <MdKeyboardArrowRight />
           </ButtonChangeProject>
         </WrapperChangeProject>

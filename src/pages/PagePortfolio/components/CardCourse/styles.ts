@@ -39,7 +39,7 @@ export const CardSchool = styled.div`
     grid-template-areas:
       'title title title'
       'hours hours hours'
-      '. button button';
+      '. . button';
   }
   @media ${({ theme }) => theme.device.mobileM} {
     width: 94%;
@@ -49,7 +49,7 @@ export const CardSchool = styled.div`
     grid-template-areas:
       'title title title'
       'hours hours hours'
-      'button button button';
+      '. . button';
   }
 `
 export const ImageSchoolCurse = styled.img`

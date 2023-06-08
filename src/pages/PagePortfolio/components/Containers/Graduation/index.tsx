@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { TitleContent } from '../../../../../components/TitleContent'
 import { CardCourse } from '../../CardCourse'
 import {
@@ -22,37 +23,68 @@ export function Graduation() {
   const theme = useTheme()
 
   const isDeviceMobile = useMediaQuery(theme.device.tabletL)
+  const [cardSelected, setCardSelected] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    if (isLoaded) {
+      const element = document.getElementById(
+        dataCourse[cardSelected].nameSchool
+      )
+      element?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+      console.log(element)
+    }
+  }, [isLoaded, cardSelected])
+
+  function handleScrollCards(button: string) {
+    setIsLoaded(true)
+    if (button === 'prev') {
+      if (cardSelected > 0) {
+        setCardSelected(cardSelected - 1)
+      } else if (cardSelected === 0) {
+        setCardSelected(dataCourse.length - 1)
+      }
+    } else {
+      if (cardSelected < dataCourse.length - 1) {
+        setCardSelected(cardSelected + 1)
+      } else if (cardSelected === dataCourse.length - 1) {
+        setCardSelected(0)
+      }
+    }
+  }
 
   return (
-    <ContentScreen>
+    <ContentScreen id="graduation">
       <TitleContent title="Formação" />
       <WrapperGraduation>
-        <WrapperButtonsCard>
-          {isDeviceMobile && (
-            <ButtonPrev>
+        {isDeviceMobile && (
+          <WrapperButtonsCard>
+            <ButtonPrev onClick={() => handleScrollCards('prev')}>
               <MdKeyboardArrowLeft />
             </ButtonPrev>
-          )}
-          <WrapperCards>
-            {dataCourse.map((data) => (
-              <CardCourse
-                key={data.id}
-                name={data.title}
-                duration={data.duration}
-                imageSchool={data.imgSchool}
-                imageCertificate={data.imgCertificate}
-                codeCertificate={data.code}
-                techs={data.techs}
-                link={data.link}
-              />
-            ))}
-          </WrapperCards>
-          {isDeviceMobile && (
-            <ButtonNext>
+            <ButtonNext onClick={() => handleScrollCards('next')}>
               <MdKeyboardArrowRight />
             </ButtonNext>
-          )}
-        </WrapperButtonsCard>
+          </WrapperButtonsCard>
+        )}
+        <WrapperCards>
+          {dataCourse.map((data, i) => (
+            <CardCourse
+              key={i}
+              nameSchool={data.nameSchool}
+              name={data.title}
+              duration={data.duration}
+              imageSchool={data.imgSchool}
+              imageCertificate={data.imgCertificate}
+              codeCertificate={data.code}
+              techs={data.techs}
+              link={data.link}
+            />
+          ))}
+        </WrapperCards>
 
         <ImgJF image={ArtJF} size={20} />
       </WrapperGraduation>

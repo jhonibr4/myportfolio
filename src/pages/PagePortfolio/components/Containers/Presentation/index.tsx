@@ -14,14 +14,19 @@ import ImageProfile from '../../../../../assets/imageProfile.jpeg'
 import { BsWhatsapp, BsGithub } from 'react-icons/bs'
 import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
 import { useTheme } from 'styled-components'
+import { formatterMessageWhats } from '../../../../../utils/formatterMessageWhats'
 
 export function Presentation() {
   const theme = useTheme()
 
   const isDeviceMobile = useMediaQuery(theme.device.laptopS)
 
+  const message =
+    'Olá Jhonathan Felix Braz, estou entrando em contado com você atráves do seu portifolio'
+
+  const messageFormatted = formatterMessageWhats(message)
   return (
-    <ContentScreen>
+    <ContentScreen id="presentation">
       <WrapperTitle>
         <TitlePresentation>
           <span>Welcome</span>
@@ -33,7 +38,10 @@ export function Presentation() {
           and Styled Components
         </SubtitlePresentation>
         <WrapperButtonsPresentation>
-          <ButtonWhatsApp>
+          <ButtonWhatsApp
+            target="_blank"
+            href={`https://wa.me/5511981625429?text=${messageFormatted}`}
+          >
             <BsWhatsapp />
             {!isDeviceMobile && 'Contact Me'}
           </ButtonWhatsApp>
