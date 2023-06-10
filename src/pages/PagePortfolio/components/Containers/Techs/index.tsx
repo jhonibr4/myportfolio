@@ -22,7 +22,7 @@ export function Techs() {
   const levelHTML = [true, true, true, false, false]
 
   return (
-    <ContentScreen id="techs">
+    <ContentScreen id="pageTechs">
       <WrapperHardSkills>
         <TitleHardSkills>
           Hard <span>Skills</span>

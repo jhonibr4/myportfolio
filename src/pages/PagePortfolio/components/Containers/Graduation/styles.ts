@@ -7,8 +7,9 @@ export const ContentScreen = styled.section`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme['black-800']};
-  @media ${({ theme }) => theme.device.tabletL} {
-    padding-bottom: 2rem;
+  @media ${({ theme }) => theme.device.laptopL} {
+    height: 100%;
+    padding-bottom: 4rem;
   }
 `
 export const WrapperGraduation = styled.div`

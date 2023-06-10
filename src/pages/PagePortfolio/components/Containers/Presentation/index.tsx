@@ -26,7 +26,7 @@ export function Presentation() {
 
   const messageFormatted = formatterMessageWhats(message)
   return (
-    <ContentScreen id="presentation">
+    <ContentScreen id="pagePresentation">
       <WrapperTitle>
         <TitlePresentation>
           <span>Welcome</span>

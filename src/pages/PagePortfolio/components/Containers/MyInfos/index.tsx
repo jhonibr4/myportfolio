@@ -16,12 +16,11 @@ export function MyInfos() {
   const infos = [
     { name: 'Name', value: 'Jhonathan Felix Braz' },
     { name: 'Age', value: 22 },
-    { name: 'Address', value: 'Rua Pio XII' },
     { name: 'PhoneNumber', value: '+55 (11)98162-5429' },
     { name: 'Email', value: 'jhonathan.braz@etec.sp.gov.br' },
   ]
   return (
-    <ContentScreen id="infos">
+    <ContentScreen id="pageInfos">
       <ImgJF image={ArtJF1} size={25} />
       <WrapperInfos>
         <TitleGreeting>Hi, I am Jhonathan Felix Braz</TitleGreeting>

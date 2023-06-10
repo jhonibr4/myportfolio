@@ -59,6 +59,15 @@ export const ButtonMenu = styled.button`
     width: 90%;
   }
 `
+export const TextButton = styled.button`
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.white};
+  background-color: transparent;
+  transition: 0.5s;
+`
 export const ButtonOpenMenu = styled.button`
   position: absolute;
   z-index: 2;

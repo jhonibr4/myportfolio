@@ -5,6 +5,7 @@ import {
   WrapperButton,
   ImageLogo,
   ButtonOpenMenu,
+  TextButton,
 } from './styles'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 import { HiHome, HiOutlineDesktopComputer } from 'react-icons/hi'
@@ -16,37 +17,114 @@ import { useMediaQuery } from '../../../../hooks/useQueryMedia'
 import { useTheme } from 'styled-components'
 
 export function Menu() {
+  const [screenSelected, setScreenSelected] = useState<string>('presentation')
   const [buttonSelected, setButtonSelected] = useState<string>('presentation')
-  const [isScrolling, setIsScrolling] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [teste, setTeste] = useState(0)
+
+  const theme = useTheme()
+  const isDeviceLaptopLarge = useMediaQuery(theme.device.laptopL)
+  const isDeviceLaptopMedium = useMediaQuery(theme.device.laptopM)
+  const isDeviceLaptopSmall = useMediaQuery(theme.device.laptopS)
+  const isDeviceMobileLarge = useMediaQuery(theme.device.mobileL)
 
   useEffect(() => {
     if (isLoaded) {
-      const element = document.getElementById(buttonSelected)
+      const element = document.getElementById(screenSelected)
       element?.scrollIntoView({
         behavior: 'smooth',
       })
       console.log(element)
     }
-  }, [isLoaded, buttonSelected])
+  }, [isLoaded, screenSelected])
 
-  function handleScrollScreen(screen: string) {
+  function handleScrollScreen(buttton: string, page: string) {
     setIsLoaded(true)
-    setIsScrolling(false)
-
-    setButtonSelected(screen)
-    setTimeout(() => {
-      setIsScrolling(true)
-    }, 1000)
+    setScreenSelected(page)
+    setButtonSelected(buttton)
+    window.addEventListener('click', function (e) {
+      setTeste(this.scrollY)
+      console.log(this.screenY)
+    })
   }
 
-  window.addEventListener('focus', function (e) {
-    console.log(e)
+  window.addEventListener('scroll', function (e) {
+    if (isDeviceLaptopLarge) {
+      if (this.scrollY >= 0 && this.scrollY < 100) {
+        setButtonSelected('presentation')
+      } else if (this.scrollY > 677 && this.scrollY < 720) {
+        setButtonSelected('infos')
+      } else if (this.scrollY > 1355 && this.scrollY < 1390) {
+        setButtonSelected('graduation')
+      } else if (this.scrollY > 2148 && this.scrollY < 2190) {
+        setButtonSelected('techs')
+      } else if (this.scrollY > 2826 && this.scrollY < 2880) {
+        setButtonSelected('projects')
+      } else if (this.scrollY > 3983 && this.scrollY < 4020) {
+        setButtonSelected('contact')
+      }
+    }
+    if (isDeviceLaptopMedium) {
+      if (this.scrollY >= 0 && this.scrollY < 100) {
+        setButtonSelected('presentation')
+      } else if (this.scrollY > 677 && this.scrollY < 720) {
+        setButtonSelected('infos')
+      } else if (this.scrollY > 1355 && this.scrollY < 1420) {
+        setButtonSelected('graduation')
+      } else if (this.scrollY > 2024 && this.scrollY < 2090) {
+        setButtonSelected('techs')
+      } else if (this.scrollY > 2712 && this.scrollY < 2790) {
+        setButtonSelected('projects')
+      } else if (this.scrollY > 3869 && this.scrollY < 3900) {
+        setButtonSelected('contact')
+      }
+    }
+    if (isDeviceLaptopSmall) {
+      if (this.scrollY >= 0 && this.scrollY < 100) {
+        setButtonSelected('presentation')
+      } else if (this.scrollY > 678 && this.scrollY < 790) {
+        setButtonSelected('infos')
+      } else if (this.scrollY > 1375 && this.scrollY < 1430) {
+        setButtonSelected('graduation')
+      } else if (this.scrollY > 2056 && this.scrollY < 2130) {
+        setButtonSelected('techs')
+      } else if (this.scrollY > 2872 && this.scrollY < 2890) {
+        setButtonSelected('projects')
+      } else if (this.scrollY > 4545 && this.scrollY < 4645) {
+        setButtonSelected('contact')
+      }
+    }
+    if (isDeviceMobileLarge) {
+      if (this.scrollY >= 0 && this.scrollY < 100) {
+        setButtonSelected('presentation')
+      } else if (this.scrollY > 678 && this.scrollY < 790) {
+        setButtonSelected('infos')
+      } else if (this.scrollY > 1375 && this.scrollY < 1430) {
+        setButtonSelected('graduation')
+      } else if (this.scrollY > 2056 && this.scrollY < 2130) {
+        setButtonSelected('techs')
+      } else if (this.scrollY > 2969 && this.scrollY < 2972) {
+        setButtonSelected('projects')
+      } else if (this.scrollY > 3674 && this.scrollY < 3694) {
+        setButtonSelected('contact')
+      }
+    } else {
+      if (this.scrollY >= 0 && this.scrollY < 100) {
+        setButtonSelected('presentation')
+      } else if (this.scrollY > 780 && this.scrollY < 820) {
+        setButtonSelected('infos')
+      } else if (this.scrollY > 1561 && this.scrollY < 1600) {
+        setButtonSelected('graduation')
+      } else if (this.scrollY > 2342 && this.scrollY < 2382) {
+        setButtonSelected('techs')
+      } else if (this.scrollY > 3123 && this.scrollY < 3300) {
+        setButtonSelected('projects')
+      } else if (this.scrollY > 4280 && this.scrollY < 4645) {
+        setButtonSelected('contact')
+      }
+    }
   })
-
-  const theme = useTheme()
-  const isLaptopSmall = useMediaQuery(theme.device.laptopS)
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -54,7 +132,9 @@ export function Menu() {
         <ImageLogo src={Logo} />
         <WrapperButton>
           <ButtonMenu
-            onClick={() => handleScrollScreen('presentation')}
+            onClick={() =>
+              handleScrollScreen('presentation', 'pagePresentation')
+            }
             className="button"
             style={
               buttonSelected === 'presentation'
@@ -63,11 +143,22 @@ export function Menu() {
             }
           >
             <HiHome />
-            {isLaptopSmall && 'Home'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'presentation'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Home
+              </TextButton>
+            )}
           </ButtonMenu>
+
           <ButtonMenu
             className="button"
-            onClick={() => handleScrollScreen('infos')}
+            onClick={() => handleScrollScreen('infos', 'pageInfos')}
             style={
               buttonSelected === 'infos'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
@@ -75,11 +166,21 @@ export function Menu() {
             }
           >
             <FaUser />
-            {isLaptopSmall && 'Informações'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'infos'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Informações
+              </TextButton>
+            )}
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => handleScrollScreen('graduation')}
+            onClick={() => handleScrollScreen('graduation', 'pageGraduation')}
             style={
               buttonSelected === 'graduation'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
@@ -87,11 +188,21 @@ export function Menu() {
             }
           >
             <FaUserGraduate />
-            {isLaptopSmall && 'Graduação'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'graduation'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Graduação
+              </TextButton>
+            )}
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => handleScrollScreen('techs')}
+            onClick={() => handleScrollScreen('techs', 'pageTechs')}
             style={
               buttonSelected === 'techs'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
@@ -99,11 +210,21 @@ export function Menu() {
             }
           >
             <BsCodeSlash />
-            {isLaptopSmall && 'Tecnologias'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'techs'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Tecnologias
+              </TextButton>
+            )}
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => handleScrollScreen('projects')}
+            onClick={() => handleScrollScreen('projects', 'pageProjects')}
             style={
               buttonSelected === 'projects'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
@@ -111,11 +232,21 @@ export function Menu() {
             }
           >
             <HiOutlineDesktopComputer />
-            {isLaptopSmall && 'Projetos'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'projects'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Projetos
+              </TextButton>
+            )}
           </ButtonMenu>
           <ButtonMenu
             className="button"
-            onClick={() => handleScrollScreen('contact')}
+            onClick={() => handleScrollScreen('contact', 'pageContact')}
             style={
               buttonSelected === 'contact'
                 ? { backgroundColor: 'white', color: '#9F51BA' }
@@ -123,10 +254,20 @@ export function Menu() {
             }
           >
             <IoMailSharp />
-            {isLaptopSmall && 'Contato'}
+            {isDeviceLaptopSmall && (
+              <TextButton
+                style={
+                  buttonSelected === 'contact'
+                    ? { color: '#9F51BA' }
+                    : { color: 'white' }
+                }
+              >
+                Contato
+              </TextButton>
+            )}
           </ButtonMenu>
         </WrapperButton>
-        {isLaptopSmall && (
+        {isDeviceLaptopSmall && (
           <ButtonOpenMenu onClick={() => setIsOpen(!isOpen)}>
             {!isOpen ? <RxHamburgerMenu /> : <RxCross1 />}
           </ButtonOpenMenu>

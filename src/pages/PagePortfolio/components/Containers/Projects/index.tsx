@@ -50,7 +50,7 @@ export function Projects() {
   }
 
   return (
-    <ContentScreen id="projects">
+    <ContentScreen id="pageProjects">
       <TitleContent title="Projetos" />
       <WrapperCardsProject>
         {dataProjects.map((project) => (
