@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
-  padding-block: 2rem;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: ${({ theme }) => theme['purple-600']};
-
+  font-size: 1.3rem;
   @media ${({ theme }) => theme.device.laptopS} {
+    padding-block: 1rem;
     height: 100%;
   }
   @media ${({ theme }) => theme.device.tabletL} {

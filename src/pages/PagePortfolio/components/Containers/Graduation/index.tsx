@@ -57,7 +57,7 @@ export function Graduation() {
   }
 
   return (
-    <ContentScreen id="graduation">
+    <ContentScreen id="pageGraduation">
       <TitleContent title="Formação" />
       <WrapperGraduation>
         {isDeviceMobile && (

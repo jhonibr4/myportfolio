@@ -20,7 +20,7 @@ export function Contact() {
   const isDeviceMobile = useMediaQuery(theme.device.tabletL)
 
   return (
-    <ContentScreen id="contact">
+    <ContentScreen id="pageContact">
       <WrapperForm>
         {isDeviceMobile && <ImgJF image={ArtJF} size={35} />}
         <TitleForm>Vamos Conversar ?</TitleForm>
