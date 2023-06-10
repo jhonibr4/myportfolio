@@ -21,7 +21,6 @@ export function Menu() {
   const [buttonSelected, setButtonSelected] = useState<string>('presentation')
   const [isLoaded, setIsLoaded] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [teste, setTeste] = useState(0)
 
   const theme = useTheme()
   const isDeviceLaptopLarge = useMediaQuery(theme.device.laptopL)
@@ -43,10 +42,6 @@ export function Menu() {
     setIsLoaded(true)
     setScreenSelected(page)
     setButtonSelected(buttton)
-    window.addEventListener('click', function (e) {
-      setTeste(this.scrollY)
-      console.log(this.screenY)
-    })
   }
 
   window.addEventListener('scroll', function (e) {
@@ -64,8 +59,7 @@ export function Menu() {
       } else if (this.scrollY > 3983 && this.scrollY < 4020) {
         setButtonSelected('contact')
       }
-    }
-    if (isDeviceLaptopMedium) {
+    } else if (isDeviceLaptopMedium) {
       if (this.scrollY >= 0 && this.scrollY < 100) {
         setButtonSelected('presentation')
       } else if (this.scrollY > 677 && this.scrollY < 720) {
@@ -79,8 +73,7 @@ export function Menu() {
       } else if (this.scrollY > 3869 && this.scrollY < 3900) {
         setButtonSelected('contact')
       }
-    }
-    if (isDeviceLaptopSmall) {
+    } else if (isDeviceLaptopSmall) {
       if (this.scrollY >= 0 && this.scrollY < 100) {
         setButtonSelected('presentation')
       } else if (this.scrollY > 678 && this.scrollY < 790) {
@@ -94,8 +87,7 @@ export function Menu() {
       } else if (this.scrollY > 4545 && this.scrollY < 4645) {
         setButtonSelected('contact')
       }
-    }
-    if (isDeviceMobileLarge) {
+    } else if (isDeviceMobileLarge) {
       if (this.scrollY >= 0 && this.scrollY < 100) {
         setButtonSelected('presentation')
       } else if (this.scrollY > 678 && this.scrollY < 790) {
