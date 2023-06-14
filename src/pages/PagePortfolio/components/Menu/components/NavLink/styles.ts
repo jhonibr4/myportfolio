@@ -18,8 +18,8 @@ export const ButtonMenu = styled.button<INavSelected>`
   align-items: center;
   width: 100%;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   background-color: ${({ selected, theme }) =>
     selected ? theme.white : 'transparent'};
   border-radius: 50px;

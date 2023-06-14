@@ -55,7 +55,7 @@ export const TitleGreeting = styled.h1`
   }
 `
 export const TextGretting = styled.p`
-  font-size: ${({ theme }) => theme.fontSize['2xl']};
+  font-size: ${({ theme }) => theme.fontSize.lg};
   margin-top: 10px;
   @media ${({ theme }) => theme.device.laptopM} {
     font-size: ${({ theme }) => theme.fontSize.lg};
@@ -94,7 +94,7 @@ export const ColumnInfo = styled.div`
   }
 `
 export const TitleInfo = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   @media ${({ theme }) => theme.device.laptopM} {
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.sb};

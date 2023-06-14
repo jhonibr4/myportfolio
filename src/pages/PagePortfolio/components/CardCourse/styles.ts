@@ -15,7 +15,7 @@ export const CardSchool = styled.div`
   grid-template-columns: 30% 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   width: 100%;
-  height: 10rem;
+  height: 8.5rem;
   @media ${({ theme }) => theme.device.laptopL} {
     height: 9rem;
   }
@@ -99,7 +99,7 @@ export const ButtonView = styled.button`
   height: 25px;
   width: 100%;
   background-color: transparent;
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-size: ${({ theme }) => theme.fontSize.base};
   color: ${({ theme }) => theme['gray-500']};
   grid-area: button;
   margin-right: 0.5rem;

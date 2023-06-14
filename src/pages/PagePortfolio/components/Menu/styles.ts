@@ -11,7 +11,7 @@ export const ContainerMenu = styled.div<IOpenedMenu>`
   align-items: center;
   position: fixed;
   left: 0;
-  width: 5rem;
+  width: 4rem;
   height: 100vh;
   background-color: ${({ theme }) => theme['purple-400']};
   transition: 0.5s;

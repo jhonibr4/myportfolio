@@ -11,7 +11,7 @@ export const ContainerItemHardSkill = styled.div`
   width: 25%;
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 6rem;
+    font-size: 4.5rem;
     margin-bottom: 0.5rem;
     @media ${({ theme }) => theme.device.laptopM} {
       font-size: 4rem;
@@ -58,10 +58,10 @@ export const WrapperIcon = styled.div<IIconLevel>`
 export const TitleTechs = styled.h1`
   margin-top: 3rem;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   span {
     color: ${({ theme }) => theme['black-800']};
-    font-size: 2.5rem;
+    font-size: 2rem;
     @media ${({ theme }) => theme.device.laptopM} {
       font-size: 1.5rem;
     }
@@ -91,7 +91,7 @@ export const RowTechs = styled(motion.div)`
 
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 12rem;
+    font-size: 10rem;
     @media ${({ theme }) => theme.device.laptopL} {
       font-size: 10rem;
     }

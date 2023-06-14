@@ -12,16 +12,12 @@ import {
 } from './styles'
 
 import ArtJF from '../../../../../assets/ArtsJF/artJF3.svg'
-import { useTheme } from 'styled-components'
-import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
 import { useContext } from 'react'
 import { ScrollContext } from '../../../../../context/ScrollContext'
 import { SelectedPage } from '../../../../../shared/types'
 
 export function Contact() {
   const { changeSelectedPage } = useContext(ScrollContext)
-  const theme = useTheme()
-  const isDeviceMobile = useMediaQuery(theme.device.tabletL)
 
   return (
     <ContentScreen id="contact">

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -50,7 +51,7 @@ export const TitlePresentation = styled.h1`
 `
 export const SubtitlePresentation = styled.p`
   margin-top: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   span {
     font-weight: bold;
     color: ${({ theme }) => theme['purple-600']};
@@ -93,9 +94,9 @@ export const ButtonWhatsApp = styled.a`
   justify-content: space-evenly;
   margin-top: 20px;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fontSize['2xl']};
-  width: 15rem;
-  height: 5rem;
+  font-size: ${({ theme }) => theme.fontSize.lg};
+  width: 12rem;
+  height: 4rem;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme['purple-600']};
   transition: 0.5s;
@@ -125,8 +126,8 @@ export const ButtonGithub = styled.a`
   margin-top: 20px;
   border-radius: 50%;
   font-size: ${({ theme }) => theme.fontSize.lg};
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border: 2px solid ${({ theme }) => theme['purple-600']};
   background: transparent;
   transition: 0.5s;
@@ -137,7 +138,7 @@ export const ButtonGithub = styled.a`
   }
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 3rem;
+    font-size: 2.5rem;
     @media ${({ theme }) => theme.device.laptopM} {
       font-size: 2.5rem;
     }

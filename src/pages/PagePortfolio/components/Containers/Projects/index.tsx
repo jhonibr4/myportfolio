@@ -61,7 +61,7 @@ export function Projects() {
         initial="hidden"
         transition={{ ease: 'easeInOut', duration: 1 }}
         variants={{
-          hidden: { opacity: 0, y: 100 },
+          hidden: { opacity: 0, y: 10 },
           visible: { opacity: 1, y: 0 },
         }}
       >

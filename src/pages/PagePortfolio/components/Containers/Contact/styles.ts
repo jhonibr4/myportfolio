@@ -31,7 +31,7 @@ export const WrapperForm = styled(motion.div)`
 
   justify-content: center;
   width: 45%;
-  height: 100%;
+  height: 80%;
 
   @media ${({ theme }) => theme.device.laptopM} {
     display: flex;
@@ -59,7 +59,7 @@ export const TitleForm = styled.h1`
   width: 100%;
 
   color: ${({ theme }) => theme['purple-200']};
-  font-size: 4rem;
+  font-size: 3rem;
 
   @media ${({ theme }) => theme.device.laptopL} {
     font-size: 3rem;
@@ -91,7 +91,7 @@ export const SubtitleForm = styled.p`
   }
 `
 export const LabelInput = styled.label`
-  font-size: ${({ theme }) => theme.fontSize['2xl']};
+  font-size: ${({ theme }) => theme.fontSize.lg};
   color: ${({ theme }) => theme['purple-200']};
   @media ${({ theme }) => theme.device.mobileL} {
     font-size: ${({ theme }) => theme.fontSize.lg};
@@ -112,8 +112,8 @@ export const TextAreaForm = styled.textarea`
   width: 96.5%;
   border-radius: 10px;
   background-color: ${({ theme }) => theme['purple-200']};
-  min-height: 15rem;
-  max-height: 20rem;
+  min-height: 10rem;
+  max-height: 15rem;
   resize: vertical;
   @media ${({ theme }) => theme.device.laptopM} {
     width: 97%;

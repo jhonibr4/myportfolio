@@ -24,6 +24,11 @@ import { SelectedPage } from '../../../../../shared/types'
 export function Techs() {
   const { changeSelectedPage } = useContext(ScrollContext)
   const levelHTML = [true, true, true, false, false]
+  const levelCSS = [true, true, true, true, false]
+  const levelReact = [true, true, true, true, false]
+  const levelTS = [true, true, true, false, false]
+  const levelJS = [true, true, true, true, false]
+  const levelStyledComponents = [true, true, true, false, false]
 
   return (
     <ContentScreen id="techs">
@@ -42,11 +47,14 @@ export function Techs() {
           }}
         >
           <ItemHardSkill image={<DiHtml5 />} levels={levelHTML} />
-          <ItemHardSkill image={<DiCss3 />} levels={levelHTML} />
-          <ItemHardSkill image={<DiReact />} levels={levelHTML} />
-          <ItemHardSkill image={<SiTypescript />} levels={levelHTML} />
-          <ItemHardSkill image={<IoLogoJavascript />} levels={levelHTML} />
-          <ItemHardSkill image={<SiStyledcomponents />} levels={levelHTML} />
+          <ItemHardSkill image={<DiCss3 />} levels={levelCSS} />
+          <ItemHardSkill image={<DiReact />} levels={levelReact} />
+          <ItemHardSkill image={<SiTypescript />} levels={levelTS} />
+          <ItemHardSkill image={<IoLogoJavascript />} levels={levelJS} />
+          <ItemHardSkill
+            image={<SiStyledcomponents />}
+            levels={levelStyledComponents}
+          />
         </ContentHardSkills>
         <TitleTechs>
           <p>Tecnologias</p>

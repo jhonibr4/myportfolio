@@ -46,7 +46,7 @@ export const WrapperInfoProject = styled.div`
 `
 export const NameProject = styled.h1``
 export const DescriptionProject = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
   @media ${({ theme }) => theme.device.laptopL} {
     font-size: 1.1rem;
@@ -59,10 +59,10 @@ export const ButtonViewProject = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   width: 50%;
-  height: 4rem;
+  height: 3rem;
   border-radius: 50px;
   background-color: ${({ theme }) => theme['purple-400']};
   align-self: flex-end;
