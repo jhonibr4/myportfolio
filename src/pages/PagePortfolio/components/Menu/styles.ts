@@ -35,7 +35,7 @@ export const WrapperButton = styled.div`
   align-items: center;
   height: 55%;
   width: 100%;
-  gap: 0.3rem;
+  gap: 0.5rem;
 `
 
 export const ButtonOpenMenu = styled.button`
