@@ -12,9 +12,12 @@ import {
 } from '../../CardProject/styles'
 import { useTheme } from 'styled-components'
 import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { ScrollContext } from '../../../../../context/ScrollContext'
+import { SelectedPage } from '../../../../../shared/types'
 
 export function Projects() {
+  const { changeSelectedPage } = useContext(ScrollContext)
   const theme = useTheme()
   const isDeviceMobile = useMediaQuery(theme.device.mobileL)
 
@@ -50,9 +53,18 @@ export function Projects() {
   }
 
   return (
-    <ContentScreen id="pageProjects">
+    <ContentScreen id="projects">
       <TitleContent title="Projetos" />
-      <WrapperCardsProject>
+      <WrapperCardsProject
+        onViewportEnter={() => changeSelectedPage(SelectedPage.Projects)}
+        whileInView="visible"
+        initial="hidden"
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, y: 100 },
+          visible: { opacity: 1, y: 0 },
+        }}
+      >
         {dataProjects.map((project) => (
           <CardProject
             key={project.id}

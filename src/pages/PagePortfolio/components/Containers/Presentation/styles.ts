@@ -1,6 +1,9 @@
+import { motion } from 'framer-motion'
+
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
+  overflow-x: hidden;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -15,7 +18,7 @@ export const ContentScreen = styled.section`
   }
 `
 
-export const WrapperTitle = styled.div`
+export const WrapperTitle = styled(motion.div)`
   width: 50%;
   @media ${({ theme }) => theme.device.laptopS} {
     width: 70%;
@@ -47,7 +50,7 @@ export const TitlePresentation = styled.h1`
 `
 export const SubtitlePresentation = styled.p`
   margin-top: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   span {
     font-weight: bold;
     color: ${({ theme }) => theme['purple-600']};
@@ -62,7 +65,7 @@ export const SubtitlePresentation = styled.p`
     font-size: 1rem;
   }
 `
-export const ContentImage = styled.img`
+export const ContentImage = styled(motion.img)`
   width: 20rem;
   height: 20rem;
   border-radius: 100%;
@@ -90,9 +93,9 @@ export const ButtonWhatsApp = styled.a`
   justify-content: space-evenly;
   margin-top: 20px;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fontSize.lg};
-  width: 12rem;
-  height: 4rem;
+  font-size: ${({ theme }) => theme.fontSize['2xl']};
+  width: 15rem;
+  height: 5rem;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme['purple-600']};
   transition: 0.5s;
@@ -103,8 +106,11 @@ export const ButtonWhatsApp = styled.a`
   svg {
     color: ${({ theme }) => theme.white};
     font-size: 2rem;
-    @media ${({ theme }) => theme.device.laptopS} {
-    }
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 13rem;
+    height: 4rem;
+    font-size: ${({ theme }) => theme.fontSize.lg};
   }
   @media ${({ theme }) => theme.device.laptopS} {
     border-radius: 50px;
@@ -119,8 +125,8 @@ export const ButtonGithub = styled.a`
   margin-top: 20px;
   border-radius: 50%;
   font-size: ${({ theme }) => theme.fontSize.lg};
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border: 2px solid ${({ theme }) => theme['purple-600']};
   background: transparent;
   transition: 0.5s;
@@ -131,7 +137,14 @@ export const ButtonGithub = styled.a`
   }
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 2rem;
+    font-size: 3rem;
+    @media ${({ theme }) => theme.device.laptopM} {
+      font-size: 2.5rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 4rem;
+    height: 4rem;
   }
   @media ${({ theme }) => theme.device.laptopS} {
     border-radius: 50px;

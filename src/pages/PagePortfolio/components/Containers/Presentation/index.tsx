@@ -15,8 +15,13 @@ import { BsWhatsapp, BsGithub } from 'react-icons/bs'
 import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
 import { useTheme } from 'styled-components'
 import { formatterMessageWhats } from '../../../../../utils/formatterMessageWhats'
+import { useContext } from 'react'
+import { ScrollContext } from '../../../../../context/ScrollContext'
+import { SelectedPage } from '../../../../../shared/types'
 
 export function Presentation() {
+  const { changeSelectedPage } = useContext(ScrollContext)
+
   const theme = useTheme()
 
   const isDeviceMobile = useMediaQuery(theme.device.laptopS)
@@ -26,8 +31,17 @@ export function Presentation() {
 
   const messageFormatted = formatterMessageWhats(message)
   return (
-    <ContentScreen id="pagePresentation">
-      <WrapperTitle>
+    <ContentScreen id="home">
+      <WrapperTitle
+        onViewportEnter={() => changeSelectedPage(SelectedPage.Home)}
+        whileInView="visible"
+        initial="hidden"
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, x: -100 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
         <TitlePresentation>
           <span>Welcome</span>
           <br /> I am <span className="text-purple"> web developer</span>
@@ -50,7 +64,17 @@ export function Presentation() {
           </ButtonGithub>
         </WrapperButtonsPresentation>
       </WrapperTitle>
-      <ContentImage src={ImageProfile} alt="" />
+      <ContentImage
+        src={ImageProfile}
+        alt=""
+        whileInView="visible"
+        initial="hidden"
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, x: 100 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      />
     </ContentScreen>
   )
 }

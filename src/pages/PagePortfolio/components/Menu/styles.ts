@@ -5,18 +5,20 @@ interface IOpenedMenu {
 }
 
 export const ContainerMenu = styled.div<IOpenedMenu>`
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   left: 0;
-  width: 4rem;
+  width: 5rem;
   height: 100vh;
   background-color: ${({ theme }) => theme['purple-400']};
   transition: 0.5s;
+
   @media ${({ theme }) => theme.device.laptopS} {
-    left: ${({ open }) => (open ? '0' : '-10rem')};
-    width: 10rem;
+    left: ${({ open }) => (open ? '0' : '-12rem')};
+    width: 12rem;
   }
 `
 export const ImageLogo = styled.img`
@@ -33,45 +35,13 @@ export const WrapperButton = styled.div`
   align-items: center;
   height: 55%;
   width: 100%;
+  gap: 0.3rem;
 `
 
-export const ButtonMenu = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 3rem;
-  height: 3rem;
-  background-color: transparent;
-  border-radius: 25px;
-  transition: 0.5s;
-
-  cursor: pointer;
-
-  svg {
-    transition: 0.1s;
-    border-radius: 50%;
-    padding: 0.5rem;
-    font-size: 2rem;
-  }
-  @media ${({ theme }) => theme.device.laptopS} {
-    padding-right: 0.5rem;
-    width: 90%;
-  }
-`
-export const TextButton = styled.button`
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${({ theme }) => theme.white};
-  background-color: transparent;
-  transition: 0.5s;
-`
 export const ButtonOpenMenu = styled.button`
   position: absolute;
   z-index: 2;
-  left: 10rem;
+  left: 12rem;
   top: 2rem;
   width: 4rem;
   height: 4rem;

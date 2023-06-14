@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
@@ -10,7 +11,7 @@ export const ContentScreen = styled.section`
   background-color: ${({ theme }) => theme['black-800']};
 `
 
-export const WrapperCardsProject = styled.div`
+export const WrapperCardsProject = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
