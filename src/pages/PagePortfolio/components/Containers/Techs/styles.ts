@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
@@ -16,9 +17,9 @@ export const ContentScreen = styled.section`
   }
 `
 
-export const ContentHardSkills = styled.div`
+export const ContentHardSkills = styled(motion.div)`
   display: flex;
-
+  height: 40vh;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem 4.6rem;
@@ -30,6 +31,7 @@ export const WrapperHardSkills = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+
   @media ${({ theme }) => theme.device.laptopM} {
     width: 70%;
   }

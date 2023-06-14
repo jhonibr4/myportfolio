@@ -1,12 +1,18 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
+  overflow-x: hidden;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   background-color: ${({ theme }) => theme['purple-600']};
   padding-bottom: 2rem;
+  @media ${({ theme }) => theme.device.laptopM} {
+    padding-block: 2rem;
+    height: 100%;
+  }
   @media ${({ theme }) => theme.device.laptopS} {
     padding-block: 2rem;
     height: 100%;
@@ -19,9 +25,14 @@ export const ContentScreen = styled.section`
   }
 `
 
-export const WrapperForm = styled.div`
-  width: 40%;
-  height: 80%;
+export const WrapperForm = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  width: 45%;
+  height: 100%;
+
   @media ${({ theme }) => theme.device.laptopM} {
     display: flex;
     flex-direction: column;
@@ -45,11 +56,14 @@ export const WrapperInputs = styled.div`
   }
 `
 export const TitleForm = styled.h1`
-  width: 90%;
+  width: 100%;
 
   color: ${({ theme }) => theme['purple-200']};
-  font-size: 3rem;
+  font-size: 4rem;
 
+  @media ${({ theme }) => theme.device.laptopL} {
+    font-size: 3rem;
+  }
   @media ${({ theme }) => theme.device.laptopM} {
     width: 81%;
   }
@@ -69,7 +83,8 @@ export const TitleForm = styled.h1`
 `
 export const SubtitleForm = styled.p`
   margin-top: 1rem;
-  width: 80%;
+  width: 85%;
+  font-size: 1.2rem;
   @media ${({ theme }) => theme.device.tabletL} {
     width: 100%;
     text-align: center;
@@ -84,7 +99,7 @@ export const LabelInput = styled.label`
 `
 export const InputForm = styled.input`
   padding-inline: 0.5rem;
-  height: 40px;
+  height: 3rem;
   width: 96.5%;
   border-radius: 10px;
   background-color: ${({ theme }) => theme['purple-200']};
@@ -97,24 +112,25 @@ export const TextAreaForm = styled.textarea`
   width: 96.5%;
   border-radius: 10px;
   background-color: ${({ theme }) => theme['purple-200']};
-  min-height: 8rem;
-  max-height: 14rem;
+  min-height: 15rem;
+  max-height: 20rem;
   resize: vertical;
   @media ${({ theme }) => theme.device.laptopM} {
     width: 97%;
-  }
-  @media ${({ theme }) => theme.device.tabletL} {
+
+    min-height: 15rem;
     resize: none;
   }
 `
 export const ButtonSend = styled.button`
   align-self: center;
   margin-top: 0.3rem;
-  width: 100%;
-  height: 50px;
+  width: 99.5%;
+  margin-right: 0.7rem;
+  height: 4rem;
   border-radius: 15px;
   color: ${({ theme }) => theme['purple-600']};
-  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-size: ${({ theme }) => theme.fontSize['2xl']};
   font-weight: 500;
   background-color: ${({ theme }) => theme.white};
   cursor: pointer;
@@ -122,5 +138,9 @@ export const ButtonSend = styled.button`
   :hover {
     color: ${({ theme }) => theme.white};
     background-color: ${({ theme }) => theme['purple-400']};
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 100%;
+    margin-right: 0rem;
   }
 `

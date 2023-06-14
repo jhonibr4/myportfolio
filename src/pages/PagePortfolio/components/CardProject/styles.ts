@@ -7,8 +7,11 @@ export const Card = styled.div`
   align-items: center;
   border-radius: 20px;
   width: 30%;
-  height: 30rem;
+  height: 40rem;
   border: 2px solid ${({ theme }) => theme['purple-600']};
+  @media ${({ theme }) => theme.device.laptopL} {
+    height: 35rem;
+  }
   @media ${({ theme }) => theme.device.laptopS} {
     width: 47%;
   }
@@ -43,7 +46,11 @@ export const WrapperInfoProject = styled.div`
 `
 export const NameProject = styled.h1``
 export const DescriptionProject = styled.p`
+  font-size: 1.4rem;
   margin-top: 0.5rem;
+  @media ${({ theme }) => theme.device.laptopL} {
+    font-size: 1.1rem;
+  }
   @media ${({ theme }) => theme.device.laptopM} {
     text-align: justify;
   }
@@ -52,11 +59,11 @@ export const ButtonViewProject = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   width: 50%;
-  height: 40px;
-  border-radius: 25px;
+  height: 4rem;
+  border-radius: 50px;
   background-color: ${({ theme }) => theme['purple-400']};
   align-self: flex-end;
   margin-top: auto;
@@ -68,7 +75,9 @@ export const ButtonViewProject = styled.button`
     background-color: ${({ theme }) => theme['purple-600']};
   }
   @media ${({ theme }) => theme.device.laptopM} {
+    font-size: 1rem;
     width: 60%;
+    height: 3rem;
   }
 `
 

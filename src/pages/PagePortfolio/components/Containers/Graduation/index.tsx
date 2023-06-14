@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TitleContent } from '../../../../../components/TitleContent'
 import { CardCourse } from '../../CardCourse'
 import {
@@ -18,9 +18,12 @@ import { ImgJF } from '../../../../../components/ImgJF'
 import { dataCourse } from '../../../../../databases/dataCourses'
 import { useTheme } from 'styled-components'
 import { useMediaQuery } from '../../../../../hooks/useQueryMedia'
+import { ScrollContext } from '../../../../../context/ScrollContext'
+import { SelectedPage } from '../../../../../shared/types'
 
 export function Graduation() {
   const theme = useTheme()
+  const { changeSelectedPage } = useContext(ScrollContext)
 
   const isDeviceMobile = useMediaQuery(theme.device.tabletL)
   const [cardSelected, setCardSelected] = useState(0)
@@ -57,9 +60,18 @@ export function Graduation() {
   }
 
   return (
-    <ContentScreen id="pageGraduation">
+    <ContentScreen id="graduation">
       <TitleContent title="Formação" />
-      <WrapperGraduation>
+      <WrapperGraduation
+        onViewportEnter={() => changeSelectedPage(SelectedPage.Graduation)}
+        whileInView="visible"
+        initial="hidden"
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, x: -150 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
         {isDeviceMobile && (
           <WrapperButtonsCard>
             <ButtonPrev onClick={() => handleScrollCards('prev')}>
@@ -86,7 +98,7 @@ export function Graduation() {
           ))}
         </WrapperCards>
 
-        <ImgJF image={ArtJF} size={20} />
+        <ImgJF image={ArtJF} size={20} animation={100} position={0} />
       </WrapperGraduation>
     </ContentScreen>
   )

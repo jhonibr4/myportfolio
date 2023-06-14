@@ -11,8 +11,12 @@ import {
 } from './styles'
 
 import ArtJF1 from '../../../../../assets/ArtsJF/artJF1.svg'
+import { useContext } from 'react'
+import { ScrollContext } from '../../../../../context/ScrollContext'
+import { SelectedPage } from '../../../../../shared/types'
 
 export function MyInfos() {
+  const { changeSelectedPage } = useContext(ScrollContext)
   const infos = [
     { name: 'Name', value: 'Jhonathan Felix Braz' },
     { name: 'Age', value: 22 },
@@ -20,9 +24,18 @@ export function MyInfos() {
     { name: 'Email', value: 'jhonathan.braz@etec.sp.gov.br' },
   ]
   return (
-    <ContentScreen id="pageInfos">
-      <ImgJF image={ArtJF1} size={25} />
-      <WrapperInfos>
+    <ContentScreen id="infos">
+      <ImgJF image={ArtJF1} size={25} animation={-150} position={0} />
+      <WrapperInfos
+        onViewportEnter={() => changeSelectedPage(SelectedPage.Infos)}
+        whileInView="visible"
+        initial="hidden"
+        transition={{ ease: 'easeInOut', duration: 1 }}
+        variants={{
+          hidden: { opacity: 0, x: 150 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
         <TitleGreeting>Hi, I am Jhonathan Felix Braz</TitleGreeting>
         <TextGretting>
           I have a Graduated Technical Computer Technician in ETEC and at the

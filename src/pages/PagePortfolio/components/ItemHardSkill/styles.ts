@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const ContainerItemHardSkill = styled.div`
@@ -10,8 +11,11 @@ export const ContainerItemHardSkill = styled.div`
   width: 25%;
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 0.5rem;
+    @media ${({ theme }) => theme.device.laptopM} {
+      font-size: 4rem;
+    }
     @media ${({ theme }) => theme.device.mobileL} {
       font-size: 2rem;
     }
@@ -54,26 +58,48 @@ export const WrapperIcon = styled.div<IIconLevel>`
 export const TitleTechs = styled.h1`
   margin-top: 3rem;
   text-align: center;
-  p {
-    margin-bottom: 0.5rem;
-    font-size: ${({ theme }) => theme.fontSize.base};
-  }
+  font-size: 2.5rem;
   span {
     color: ${({ theme }) => theme['black-800']};
+    font-size: 2.5rem;
+    @media ${({ theme }) => theme.device.laptopM} {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    margin-bottom: 0.5rem;
+
+    font-size: 1.5rem;
+    @media ${({ theme }) => theme.device.laptopM} {
+      font-size: 1rem;
+    }
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: 1.5rem;
+  }
+  @media ${({ theme }) => theme.device.mobileL} {
+    margin-top: 8rem;
   }
 `
-export const RowTechs = styled.div`
+export const RowTechs = styled(motion.div)`
   display: flex;
   align-self: center;
   justify-content: center;
-  margin-top: 1rem;
+
   flex-wrap: wrap;
   width: 70%;
 
   svg {
     color: ${({ theme }) => theme.white};
-    font-size: 9rem;
+    font-size: 12rem;
+    @media ${({ theme }) => theme.device.laptopL} {
+      font-size: 10rem;
+    }
+    @media ${({ theme }) => theme.device.mobileS} {
+      font-size: 7rem;
+    }
   }
+
   @media ${({ theme }) => theme.device.mobileL} {
     width: 100%;
   }

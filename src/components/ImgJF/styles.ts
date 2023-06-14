@@ -1,10 +1,11 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 interface ISizeImg {
   size: number
 }
 
-export const ImgFigure = styled.img<ISizeImg>`
+export const ImgFigure = styled(motion.img)<ISizeImg>`
   width: ${({ size }) => `${size}rem`};
   @media ${({ theme }) => theme.device.laptopL} {
     width: ${({ size }) => `${size / 1.2}rem`};

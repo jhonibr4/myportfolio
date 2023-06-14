@@ -15,7 +15,7 @@ export const CardSchool = styled.div`
   grid-template-columns: 30% 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   width: 100%;
-  height: 8rem;
+  height: 10rem;
   @media ${({ theme }) => theme.device.laptopL} {
     height: 9rem;
   }
@@ -58,16 +58,21 @@ export const ImageSchoolCurse = styled.img`
 `
 export const TitleSchool = styled.h1`
   padding-left: 1rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   grid-area: title;
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: ${({ theme }) => theme.fontSize.sb};
+  }
 `
 export const WrapperHours = styled.div`
   display: flex;
   padding-left: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.lg};
   grid-area: hours;
 `
 export const LabelHour = styled.label`
   font-weight: bold;
+  font-size: ${({ theme }) => theme.fontSize.lg};
   color: ${({ theme }) => theme['gray-500']};
   @media ${({ theme }) => theme.device.laptopM} {
     font-size: ${({ theme }) => theme.fontSize.sb};
@@ -94,6 +99,7 @@ export const ButtonView = styled.button`
   height: 25px;
   width: 100%;
   background-color: transparent;
+  font-size: ${({ theme }) => theme.fontSize.lg};
   color: ${({ theme }) => theme['gray-500']};
   grid-area: button;
   margin-right: 0.5rem;
@@ -105,6 +111,9 @@ export const ButtonView = styled.button`
   }
   svg {
     margin-top: 0.2rem;
+  }
+  @media ${({ theme }) => theme.device.laptopM} {
+    font-size: ${({ theme }) => theme.fontSize.sb};
   }
 `
 

@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 import LogoBackground from '../../../../../assets/logo.svg'
+import { motion } from 'framer-motion'
 
 export const ContentScreen = styled.section`
+  overflow-x: hidden;
   height: 100vh;
   background-color: ${({ theme }) => theme['purple-600']};
   display: flex;
@@ -20,19 +22,25 @@ export const ContentScreen = styled.section`
     gap: 0rem;
   }
   @media ${({ theme }) => theme.device.mobileL} {
-    width: 100%;
+    width: 100vw;
+    gap: 2rem;
   }
 `
-export const WrapperInfos = styled.div`
+export const WrapperInfos = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 60%;
+
   width: 45%;
   text-align: justify;
   @media ${({ theme }) => theme.device.laptopS} {
     flex-direction: column;
     width: 80%;
+  }
+  @media ${({ theme }) => theme.device.mobileS} {
+    flex-direction: column;
+    width: 95%;
   }
 `
 export const TitleGreeting = styled.h1`
@@ -64,7 +72,7 @@ export const RowInfos = styled.div`
   display: flex;
   justify-content: space-between;
   @media ${({ theme }) => theme.device.laptopS} {
-    margin-block: 1rem;
+    margin-block: 2rem;
   }
 `
 export const ColumnInfo = styled.div`
@@ -76,15 +84,8 @@ export const ColumnInfo = styled.div`
   @media ${({ theme }) => theme.device.laptopM} {
     width: 100%;
   }
+
   @media ${({ theme }) => theme.device.laptopS} {
-    gap: 0.5rem;
-    :nth-child(2) {
-      font-size: 0.8rem;
-      text-align: left;
-    }
-  }
-  @media ${({ theme }) => theme.device.laptopS} {
-    gap: 0.5rem 0rem;
     font-size: ${({ theme }) => theme.fontSize.md};
     &:nth-child(2) {
       font-size: 0.8rem;
@@ -92,4 +93,10 @@ export const ColumnInfo = styled.div`
     }
   }
 `
-export const TitleInfo = styled.p``
+export const TitleInfo = styled.p`
+  font-size: 1.5rem;
+  @media ${({ theme }) => theme.device.laptopM} {
+    width: 100%;
+    font-size: ${({ theme }) => theme.fontSize.sb};
+  }
+`
