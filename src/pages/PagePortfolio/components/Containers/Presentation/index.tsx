@@ -43,13 +43,17 @@ export function Presentation() {
         }}
       >
         <TitlePresentation>
-          <span>Welcome</span>
-          <br /> I am <span className="text-purple"> web developer</span>
+          <span>Bem vindo!</span>
+          <br /> Eu sou{' '}
+          <span className="text-purple">Desenvolvedor front-end</span>
         </TitlePresentation>
         <SubtitlePresentation>
-          A <span className="text-purple">Front-End Web Developer</span> and I
-          am focused with following tecgnologies: React, Javascript, Typescript
-          and Styled Components
+          Olá, seja bem-vindo ao meu portfólio! Sou um{' '}
+          <span className="text-purple">desenvolvedor front-End </span>
+          apaixonado por criar experiências digitais excepcionais. Minha
+          principal expertise está em ReactJS, uma biblioteca poderosa que
+          utilizo para desenvolver interfaces de usuário interativas e
+          dinâmicas.
         </SubtitlePresentation>
         <WrapperButtonsPresentation>
           <ButtonWhatsApp
@@ -57,7 +61,7 @@ export function Presentation() {
             href={`https://wa.me/5511981625429?text=${messageFormatted}`}
           >
             <BsWhatsapp />
-            {!isDeviceMobile && 'Contact Me'}
+            {!isDeviceMobile && 'Chamar'}
           </ButtonWhatsApp>
           <ButtonGithub target="_blank" href="https://github.com/jhonibr4">
             <BsGithub />

@@ -18,10 +18,10 @@ import { SelectedPage } from '../../../../../shared/types'
 export function MyInfos() {
   const { changeSelectedPage } = useContext(ScrollContext)
   const infos = [
-    { name: 'Name', value: 'Jhonathan Felix Braz' },
-    { name: 'Age', value: 22 },
-    { name: 'PhoneNumber', value: '+55 (11)98162-5429' },
-    { name: 'Email', value: 'jhonathan.braz@etec.sp.gov.br' },
+    { name: 'Nome', value: 'Jhonathan Felix Braz' },
+    { name: 'Idade', value: 22 },
+    { name: 'Numero', value: '+55 (11)98162-5429' },
+    { name: 'E-mail', value: 'jhonathan.braz@etec.sp.gov.br' },
   ]
   return (
     <ContentScreen id="infos">
@@ -36,13 +36,13 @@ export function MyInfos() {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <TitleGreeting>Hi, I am Jhonathan Felix Braz</TitleGreeting>
+        <TitleGreeting>Olá, eu sou Jhonathan Felix Braz.</TitleGreeting>
         <TextGretting>
-          I have a Graduated Technical Computer Technician in ETEC and at the
-          moment studying Higher Education in Systems Analysis and Development
-          at Faculdade Uninter (2nd semester). I am a Front End Developer and my
-          objective is to work with the following technologies: ReactJS, React
-          Native and with the languages: JavaScript and TypeScript
+          Sou um Técnico em Informática formado pela ETEC e atualmente estou
+          estudando Ensino Superior em Análise e Desenvolvimento de Sistemas na
+          Faculdade Uninter (2º semestre). Sou um Desenvolvedor Front-End e meu
+          objetivo é trabalhar com as seguintes tecnologias: ReactJS, React
+          Native, e com as linguagens: JavaScript e TypeScript.
         </TextGretting>
         <RowInfos>
           <ColumnInfo>

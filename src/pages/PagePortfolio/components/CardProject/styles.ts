@@ -16,10 +16,10 @@ export const Card = styled.div`
     width: 47%;
   }
   @media ${({ theme }) => theme.device.tabletL} {
-    width: 46.9%;
+    flex-shrink: 0;
+    width: 95%;
   }
   @media ${({ theme }) => theme.device.mobileL} {
-    flex-shrink: 0;
     width: 98%;
   }
 `
@@ -35,7 +35,11 @@ export const WrapperImage = styled.div`
 `
 
 export const ImageLogoProject = styled.img`
-  width: 80%;
+  width: 65%;
+
+  @media ${({ theme }) => theme.device.tabletL} {
+    width: 50%;
+  }
 `
 export const WrapperInfoProject = styled.div`
   display: flex;
@@ -121,7 +125,7 @@ export const DialogContent = styled(Dialog.Content)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 40rem;
+  min-width: 37rem;
   height: 45rem;
 
   background-color: ${({ theme }) => theme['black-800']};
@@ -139,7 +143,7 @@ export const DialogContent = styled(Dialog.Content)`
     height: 40rem;
   }
   @media ${({ theme }) => theme.device.tabletL} {
-    min-width: 35rem;
+    min-width: 32rem;
     height: 95%;
   }
   @media ${({ theme }) => theme.device.mobileL} {
@@ -188,7 +192,7 @@ export const WrapperImageProject = styled.div`
   display: flex;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  width: 40rem;
+  width: 37rem;
 
   height: 60%;
   align-items: center;
@@ -207,7 +211,7 @@ export const WrapperImageProject = styled.div`
     height: 55%;
   }
   @media ${({ theme }) => theme.device.tabletL} {
-    width: 35rem;
+    width: 32rem;
     height: 60%;
   }
   @media ${({ theme }) => theme.device.mobileL} {

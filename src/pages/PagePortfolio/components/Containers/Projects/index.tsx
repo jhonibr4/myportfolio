@@ -19,7 +19,7 @@ import { SelectedPage } from '../../../../../shared/types'
 export function Projects() {
   const { changeSelectedPage } = useContext(ScrollContext)
   const theme = useTheme()
-  const isDeviceMobile = useMediaQuery(theme.device.mobileL)
+  const isDeviceMobile = useMediaQuery(theme.device.tabletL)
 
   const [cardSelected, setCardSelected] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -75,6 +75,7 @@ export function Projects() {
             imagesProject={project.imagesProject}
             techs={project.techs}
             link={project.link}
+            typeProject={project.typeProject}
           ></CardProject>
         ))}
       </WrapperCardsProject>

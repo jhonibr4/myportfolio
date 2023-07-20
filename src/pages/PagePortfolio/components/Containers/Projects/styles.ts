@@ -14,13 +14,16 @@ export const ContentScreen = styled.section`
 export const WrapperCardsProject = styled(motion.div)`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   width: 85%;
   height: 100%;
   margin-top: 2rem;
   gap: 2rem;
-  @media ${({ theme }) => theme.device.mobileL} {
+  @media ${({ theme }) => theme.device.tabletL} {
+    justify-content: left;
+    width: 60%;
+
     overflow-x: hidden;
     flex-wrap: nowrap;
   }

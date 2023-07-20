@@ -3,16 +3,17 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const ContentScreen = styled.section`
-  overflow-x: hidden;
-  overflow-y: hidden;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: ${({ theme }) => theme['black-800']};
-
+  overflow-x: hidden;
   @media ${({ theme }) => theme.device.laptopS} {
     flex-direction: column-reverse;
+  }
+  @media ${({ theme }) => theme.device.tabletL} {
+    padding-block: 4rem;
   }
   @media ${({ theme }) => theme.device.mobileL} {
     justify-content: space-evenly;
@@ -26,13 +27,13 @@ export const WrapperTitle = styled(motion.div)`
   }
 `
 export const TitlePresentation = styled.h1`
-  font-size: 3.5rem;
+  font-size: 3rem;
   span {
     font-size: 2rem;
     font-weight: 500;
   }
   .text-purple {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: ${({ theme }) => theme['purple-600']};
     @media ${({ theme }) => theme.device.laptopM} {
       font-size: 2.5rem;
@@ -51,7 +52,7 @@ export const TitlePresentation = styled.h1`
 `
 export const SubtitlePresentation = styled.p`
   margin-top: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   span {
     font-weight: bold;
     color: ${({ theme }) => theme['purple-600']};

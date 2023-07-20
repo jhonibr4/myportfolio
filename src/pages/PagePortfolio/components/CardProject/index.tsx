@@ -26,10 +26,16 @@ import {
   WrapperAllInfos,
 } from './styles'
 
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdOutlineWeb,
+} from 'react-icons/md'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { BsGithub } from 'react-icons/bs'
+import { FiFigma } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
+
 import { ItemTech } from '../../../../components/ItemTech'
 
 export function CardProject({
@@ -39,6 +45,7 @@ export function CardProject({
   imagesProject,
   techs,
   link,
+  typeProject,
 }: IProject) {
   const [open, setOpen] = useState(false)
   const [imageSelected, setImageSelected] = useState(0)
@@ -69,6 +76,30 @@ export function CardProject({
       } else if (imageSelected === imagesProject.length - 1) {
         setImageSelected(0)
       }
+    }
+  }
+  function typeButton() {
+    if (typeProject === 'github') {
+      return (
+        <ButtonViewProjectGithub href={link} target="_blank">
+          Ver Projeto no Github
+          <BsGithub />
+        </ButtonViewProjectGithub>
+      )
+    } else if (typeProject === 'figma') {
+      return (
+        <ButtonViewProjectGithub href={link} target="_blank">
+          Ver Projeto no Figma
+          <FiFigma />
+        </ButtonViewProjectGithub>
+      )
+    } else {
+      return (
+        <ButtonViewProjectGithub href={link} target="_blank">
+          Ver site do projeto
+          <MdOutlineWeb />
+        </ButtonViewProjectGithub>
+      )
     }
   }
 
@@ -111,12 +142,7 @@ export function CardProject({
                       ))}
                     </WrapperTechsProject>
                   </WrapperAllInfos>
-                  <WrapperButton>
-                    <ButtonViewProjectGithub href={link} target="_blank">
-                      Ver Projeto no Github
-                      <BsGithub />
-                    </ButtonViewProjectGithub>
-                  </WrapperButton>
+                  <WrapperButton>{typeButton()}</WrapperButton>
                 </DialogContent>
               </DialogOverlay>
             </DialogPortal>

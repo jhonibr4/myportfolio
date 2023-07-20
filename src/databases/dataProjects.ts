@@ -1,86 +1,94 @@
-import FoyerLogo from "../assets/LogoProjects/foyer.png";
-import FindAFriendLogo from "../assets/LogoProjects/findafriend.svg";
-import RocketNFTsLogo from "../assets/LogoProjects/RocketNFTs.svg";
-import ProffyLogo from "../assets/LogoProjects/proffy.svg";
-import BeTheHeroLogo from "../assets/LogoProjects/bethehero.svg";
+import FindAFriendLogo from '../assets/LogoProjects/findafriend.svg'
+import MjCodesLogo from '../assets/LogoProjects/mjcodes.png'
+import BeTheHeroLogo from '../assets/LogoProjects/bethehero.svg'
+import ProjectWithoutLogo from '../assets/LogoWhite.svg'
 
-import FindAFriend1 from "../assets/Projects/FindAFriend/1.png";
-import FindAFriend2 from "../assets/Projects/FindAFriend/2.png";
-import FindAFriend3 from "../assets/Projects/FindAFriend/3.png";
+import FindAFriend1 from '../assets/Projects/FindAFriend/1.png'
+import FindAFriend2 from '../assets/Projects/FindAFriend/2.png'
+import FindAFriend3 from '../assets/Projects/FindAFriend/3.png'
 
-import RocketNFTs1 from "../assets/Projects/RocketNFTs/1.png";
-import RocketNFTs2 from "../assets/Projects/RocketNFTs/2.png";
-import RocketNFTs3 from "../assets/Projects/RocketNFTs/3.png";
+import PixelEmporium1 from '../assets/Projects/PixelEmporium/1.svg'
+import PixelEmporium2 from '../assets/Projects/PixelEmporium/2.svg'
+import PixelEmporium3 from '../assets/Projects/PixelEmporium/3.svg'
+
+import SakuraSushiBar1 from '../assets/Projects/SakuraSushiBar/1.svg'
+import SakuraSushiBar2 from '../assets/Projects/SakuraSushiBar/2.svg'
+import SakuraSushiBar3 from '../assets/Projects/SakuraSushiBar/3.svg'
+
+import BeTheHero1 from '../assets/Projects/BeTheHero/1.png'
+import BeTheHero2 from '../assets/Projects/BeTheHero/2.png'
+import BeTheHero3 from '../assets/Projects/BeTheHero/3.png'
+
+import MjCodes1 from '../assets/Projects/MjCodes/1.svg'
+import MjCodes2 from '../assets/Projects/MjCodes/2.svg'
+import MjCodes3 from '../assets/Projects/MjCodes/3.svg'
 
 interface IDataProjects {
-  id: string;
-  name: string;
-  description: string;
-  imageLogo: string;
-  imagesProject: string[];
-  techs: string[];
-  link: string;
+  id: string
+  name: string
+  description: string
+  imageLogo: string
+  imagesProject: string[]
+  techs: string[]
+  link: string
+  typeProject: string
 }
 
 export const dataProjects: IDataProjects[] = [
   {
-    id: "d9656fed-a41b-4d31-a134-08f1d81c6cdd",
-    name: "Foyer",
-    imageLogo: FoyerLogo,
+    id: '65494f39-1579-4677-a689-37564d257fe2',
+    name: 'Mj Codes Techs',
+    imageLogo: MjCodesLogo,
     description:
-      "Foyer é um projeto desenvolvido com React Native e tem o objetivo de facilitar as funcionalidade no gerenciamento de condomínios. ",
-    imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
-    techs: ["React Native", "JavaScript", "Express", "Axios"],
-    link: "https://github.com/jhonibr4/NewFoyer",
+      'Mj Codes Techs é um projeto landing page em que faço parte desenvolvido com NextJS, o site foi criado para divulgação da startup e mostrar o serviço que será oferecido pela a equipe para trabalhos freelancer.',
+    imagesProject: [MjCodes1, MjCodes2, MjCodes3],
+    techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
+    link: 'https://github.com/jhonibr4/be-the-hero',
+    typeProject: 'site',
   },
   {
-    id: "37957c04-8b9f-4a08-9c12-9b5dad746411",
-    name: "Find A Friend",
+    id: 'd9656fed-a41b-4d31-a134-08f1d81c6cd0',
+    name: 'Find A Friend',
     imageLogo: FindAFriendLogo,
     description:
-      "Find A Friend é um desafio/projeto desenvolvido com ViteJs que tem o foco em armazenar cadastros de pets para adoção.",
+      'Find A Friend é um desafio/projeto desenvolvido com ViteJs que tem o foco em armazenar cadastros de pets para adoção.',
     imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
-    techs: ["ViteJS", "TypeScript", "Styled Components"],
-    link: "https://github.com/jhonibr4/Find-A-Friend",
+    techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
+    link: 'https://github.com/jhonibr4/NewFoyer',
+    typeProject: 'github',
   },
   {
-    id: "cd79a987-9c72-4f9e-a320-f3395b184b51",
-    name: "Rocket NFTs",
-    imageLogo: RocketNFTsLogo,
-    description:
-      "FRocketNFTs é um desafio/projeto Landing Page desenvolvido com ViteJs e esse projeto tem como objetivo de apresentar uma NFT fictícia.",
-    imagesProject: [RocketNFTs1, RocketNFTs2, RocketNFTs3],
-    techs: ["ViteJS", "TypeScript", "Styled Components"],
-    link: "https://github.com/jhonibr4/RocketNFT",
-  },
-  {
-    id: "bf4ac710-d478-47ef-84f9-9203bae20711",
-    name: "Proffy",
-    imageLogo: ProffyLogo,
-    description:
-      "Foyer é um projeto desenvolvido com React Native e tem o objetivo de facilitar as funcionalidade no gerenciamento de condomínios. ",
-    imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
-    techs: ["React Native", "JavaScript", "Express", "Axios"],
-    link: "https://github.com/jhonibr4/ProffyApp",
-  },
-  {
-    id: "65494f39-1579-4677-a689-37564d257fe8",
-    name: "Be The Hero",
+    id: 'bf4ac710-d478-47ef-84f9-9203bae20719',
+    name: 'Be The Hero',
     imageLogo: BeTheHeroLogo,
     description:
-      "Foyer é um projeto desenvolvido com React Native e tem o objetivo de facilitar as funcionalidade no gerenciamento de condomínios. ",
-    imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
-    techs: ["React Native", "JavaScript", "Express", "Axios"],
-    link: "https://github.com/jhonibr4/be-the-hero",
+      'Be The Hero é um desafio/projeto desenvolvido com ReactJS na 11ª edição da Semana OmniStack que tem o foco conectar pessoas que estão disposta a ajudar ONGS que oferece ajuda para animais com dificuldade.',
+    imagesProject: [BeTheHero1, BeTheHero2, BeTheHero3],
+    techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
+    link: 'https://github.com/jhonibr4/ProffyApp',
+    typeProject: 'github',
+  },
+
+  {
+    id: '37957c04-8b9f-4a08-9c12-9b5dad746418',
+    name: 'Pixel Emporium',
+    imageLogo: ProjectWithoutLogo,
+    description:
+      'Pixel Emporium foi um design de um projeto front-end desenvolvido para aprimorar minhas habilidades com a ferramente Figma',
+    imagesProject: [PixelEmporium1, PixelEmporium2, PixelEmporium3],
+    techs: ['Figma'],
+    link: 'https://github.com/jhonibr4/Find-A-Friend',
+    typeProject: 'figma',
   },
   {
-    id: "655f5397-297c-430a-82aa-33aa8fe634bc",
-    name: "Foyer",
-    imageLogo: FoyerLogo,
+    id: 'cd79a987-9c72-4f9e-a320-f3395b184b57',
+    name: 'Sakura Sushi Bar',
+    imageLogo: ProjectWithoutLogo,
     description:
-      "Foyer é um projeto desenvolvido com React Native e tem o objetivo de facilitar as funcionalidade no gerenciamento de condomínios. ",
-    imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
-    techs: ["React Native", "JavaScript", "Express", "Axios"],
-    link: "",
+      'Sakura Sushi Bar foi um design de um projeto front-end desenvolvido para aprimorar minhas habilidades com a ferramente Figma',
+    imagesProject: [SakuraSushiBar1, SakuraSushiBar2, SakuraSushiBar3],
+    techs: ['Figma'],
+    link: 'https://github.com/jhonibr4/RocketNFT',
+    typeProject: 'figma',
   },
-];
+]

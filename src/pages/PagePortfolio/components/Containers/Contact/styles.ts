@@ -98,6 +98,7 @@ export const LabelInput = styled.label`
   }
 `
 export const InputForm = styled.input`
+  font-size: ${({ theme }) => theme.fontSize.lg};
   padding-inline: 0.5rem;
   height: 3rem;
   width: 96.5%;
@@ -115,6 +116,7 @@ export const TextAreaForm = styled.textarea`
   min-height: 10rem;
   max-height: 15rem;
   resize: vertical;
+  font-size: ${({ theme }) => theme.fontSize.lg};
   @media ${({ theme }) => theme.device.laptopM} {
     width: 97%;
 

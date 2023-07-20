@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useEffect, useState } from 'react'
+import { ReactNode, createContext, useState } from 'react'
 import { SelectedPage } from '../shared/types'
 
 interface IScrollContext {
@@ -13,10 +13,6 @@ export const ScrollContext = createContext({} as IScrollContext)
 
 export function ScrollProvider({ children }: IScrollProvider) {
   const [selectedPage, setSelectedPage] = useState(SelectedPage.Home)
-
-  useEffect(() => {
-    console.log('ola')
-  }, [selectedPage])
 
   function changeSelectedPage(page: SelectedPage) {
     setSelectedPage(page)

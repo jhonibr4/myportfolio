@@ -8,6 +8,7 @@ export const ContentScreen = styled.section`
   justify-content: space-around;
   background-color: ${({ theme }) => theme['purple-600']};
   font-size: 1.3rem;
+  overflow-x: hidden;
   @media ${({ theme }) => theme.device.laptopS} {
     padding-block: 1rem;
     height: 100%;

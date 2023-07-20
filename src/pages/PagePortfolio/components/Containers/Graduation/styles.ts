@@ -4,16 +4,12 @@ import styled from 'styled-components'
 export const ContentScreen = styled.section`
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme['black-800']};
-  @media ${({ theme }) => theme.device.laptopL} {
-    height: 100%;
-    padding-bottom: 4rem;
-  }
+  padding-bottom: 4rem;
 `
 export const WrapperGraduation = styled(motion.div)`
   margin-top: 4rem;

@@ -42,8 +42,8 @@ export function Techs() {
           initial="hidden"
           transition={{ ease: 'easeInOut', duration: 1 }}
           variants={{
-            hidden: { opacity: 0, y: 150 },
-            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, x: 150 },
+            visible: { opacity: 1, x: 0 },
           }}
         >
           <ItemHardSkill image={<DiHtml5 />} levels={levelHTML} />
@@ -66,8 +66,8 @@ export function Techs() {
           initial="hidden"
           transition={{ ease: 'easeInOut', duration: 1, delay: 0.5 }}
           variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
           }}
         >
           <DiJava />
