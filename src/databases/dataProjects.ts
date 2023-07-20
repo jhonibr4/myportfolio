@@ -43,7 +43,7 @@ export const dataProjects: IDataProjects[] = [
       'Mj Codes Techs é um projeto landing page em que faço parte desenvolvido com NextJS, o site foi criado para divulgação da startup e mostrar o serviço que será oferecido pela a equipe para trabalhos freelancer.',
     imagesProject: [MjCodes1, MjCodes2, MjCodes3],
     techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
-    link: 'https://github.com/jhonibr4/be-the-hero',
+    link: 'https://mjcodestechs.com.br',
     typeProject: 'site',
   },
   {
@@ -54,7 +54,7 @@ export const dataProjects: IDataProjects[] = [
       'Find A Friend é um desafio/projeto desenvolvido com ViteJs que tem o foco em armazenar cadastros de pets para adoção.',
     imagesProject: [FindAFriend1, FindAFriend2, FindAFriend3],
     techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
-    link: 'https://github.com/jhonibr4/NewFoyer',
+    link: 'https://github.com/jhonibr4/Find-A-Friend',
     typeProject: 'github',
   },
   {
@@ -65,7 +65,7 @@ export const dataProjects: IDataProjects[] = [
       'Be The Hero é um desafio/projeto desenvolvido com ReactJS na 11ª edição da Semana OmniStack que tem o foco conectar pessoas que estão disposta a ajudar ONGS que oferece ajuda para animais com dificuldade.',
     imagesProject: [BeTheHero1, BeTheHero2, BeTheHero3],
     techs: ['React Native', 'JavaScript', 'Express', 'Axios'],
-    link: 'https://github.com/jhonibr4/ProffyApp',
+    link: 'https://github.com/jhonibr4/be-the-hero',
     typeProject: 'github',
   },
 
@@ -77,7 +77,7 @@ export const dataProjects: IDataProjects[] = [
       'Pixel Emporium foi um design de um projeto front-end desenvolvido para aprimorar minhas habilidades com a ferramente Figma',
     imagesProject: [PixelEmporium1, PixelEmporium2, PixelEmporium3],
     techs: ['Figma'],
-    link: 'https://github.com/jhonibr4/Find-A-Friend',
+    link: 'https://www.figma.com/proto/Vfr7TGyFMMhGVJ2XGHkNkA/Pixel-Emporium?node-id=2-2&scaling=scale-down&mode=design&t=vLMvdx8lo2Uo4gTf-1',
     typeProject: 'figma',
   },
   {
@@ -88,7 +88,7 @@ export const dataProjects: IDataProjects[] = [
       'Sakura Sushi Bar foi um design de um projeto front-end desenvolvido para aprimorar minhas habilidades com a ferramente Figma',
     imagesProject: [SakuraSushiBar1, SakuraSushiBar2, SakuraSushiBar3],
     techs: ['Figma'],
-    link: 'https://github.com/jhonibr4/RocketNFT',
+    link: 'https://www.figma.com/proto/ffOG73IhXP4RmEBDCdulSi/Sakura-Sushi-Bar?type=design&node-id=1-2&t=r5HWUkfSn7VPliyM-1&scaling=scale-down&page-id=0%3A1&mode=design',
     typeProject: 'figma',
   },
 ]
